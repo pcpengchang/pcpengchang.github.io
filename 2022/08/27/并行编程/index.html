@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>并行编程 | PC</title><meta name="author" content="pengchang"><meta name="copyright" content="pengchang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="第一部分：thread类 c++头文件&lt;thread&gt;主要包含了std::thread类，此外，命名空间std::this_thread也封装在这一头文件中。 构造 thread类的构造函数为thread (Fn&amp;&amp; fn, Args&amp;&amp;... args);，线程会调用fn函数，函数fn有需要传递的参数在args里给出。 构造函数结束的同时函数fn将被调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并行编程">
+<meta property="og:url" content="http://example.com/2022/08/27/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="PC">
+<meta property="og:description" content="第一部分：thread类 c++头文件&lt;thread&gt;主要包含了std::thread类，此外，命名空间std::this_thread也封装在这一头文件中。 构造 thread类的构造函数为thread (Fn&amp;&amp; fn, Args&amp;&amp;... args);，线程会调用fn函数，函数fn有需要传递的参数在args里给出。 构造函数结束的同时函数fn将被调">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg">
+<meta property="article:published_time" content="2022-08-27T04:59:24.000Z">
+<meta property="article:modified_time" content="2022-08-27T05:00:46.734Z">
+<meta property="article:author" content="pengchang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg"><link rel="shortcut icon" href="/img/1.png"><link rel="canonical" href="http://example.com/2022/08/27/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '并行编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-27 13:00:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241424400.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">PC</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">并行编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-27T04:59:24.000Z" title="发表于 2022-08-27 12:59:24">2022-08-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-27T05:00:46.734Z" title="更新于 2022-08-27 13:00:46">2022-08-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="并行编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第一部分：thread类">第一部分：thread类</h2>
+<p><code>c++</code>头文件<code>&lt;thread&gt;</code>主要包含了<code>std::thread</code>类，此外，命名空间<code>std::this_thread</code>也封装在这一头文件中。</p>
+<h3 id="构造">构造</h3>
+<p><code>thread</code>类的构造函数为<code>thread (Fn&amp;&amp; fn, Args&amp;&amp;... args);</code>，线程会调用<code>fn</code>函数，函数<code>fn</code>有需要传递的参数在<code>args</code>里给出。 构造函数结束的同时函数fn将被调用**。</p>
+<h3 id="方法">方法</h3>
+<ul>
+<li><code>join</code>方法：
+<ul>
+<li>声明：<code>void join();</code></li>
+<li>只有当这个线程结束并返回后主线程才会继续执行。</li>
+</ul>
+</li>
+<li><code>detach</code>方法：
+<ul>
+<li>声明：<code>void detach();</code></li>
+<li>把这个线程与主线程分离运行。</li>
+</ul>
+</li>
+</ul>
+<p>一个例程：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_a</span><span class="params">([]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">            std::cout &lt;&lt; <span class="string">&quot;thread a: &quot;</span> &lt;&lt; i &lt;&lt; std::endl;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_b</span><span class="params">([]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">            std::cout &lt;&lt; <span class="string">&quot;thread b: &quot;</span> &lt;&lt; i &lt;&lt; std::endl;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    thread_a.<span class="built_in">detach</span>();</span><br><span class="line">    thread_b.<span class="built_in">detach</span>();</span><br><span class="line">    std::this_thread::<span class="built_in">sleep_for</span>(std::chrono::<span class="built_in">seconds</span>(<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下是程序中的部分输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">thread a: 61856</span><br><span class="line">thread b: 60031</span><br><span class="line">thread a: 61857</span><br><span class="line">thread b: 60032</span><br><span class="line">thread a: 61858</span><br><span class="line">thread b: 60033</span><br><span class="line">thread a: 61859</span><br><span class="line">thread b: 60034</span><br><span class="line">thread a: 61860</span><br></pre></td></tr></table></figure>
+<p>可以看到<code>thread_a</code>和<code>thread_b</code>两个线程在同时向命令行输出信息。</p>
+<h2 id="第二部分：mutex类">第二部分：mutex类</h2>
+<p><strong>多线程很方便，许多任务都可以通过并行式运算加快计算速度，但是同时也带来了一些问题，例如当多个线程同时竞争一个内存区域时，就会产生线程安全问题，导致程序运行出现一些意想不到的问题。</strong></p>
+<p><strong>这样的现象就是多个进程同时竞争一个内存资源导致的。</strong></p>
+<p>为了解决这种问题，我们引入了一种工具——<code>锁</code>。所谓<code>锁</code>，顾名思义，是用来保护内存的工具，在多线程开发中，必须合理地使用锁才能保证程序的安全。</p>
+<p>在<code>c++11</code>中提供了<code>mutex（互斥类）</code>，它们封装在头文件<code>&lt;mutex&gt;</code>中。通过<code>mutex</code>可以比较方便的在多线程中使用<code>锁</code>。</p>
+<p>std::mutex也被称为互斥锁，同一时间只能被一个线程上锁，其他线程想上锁时，必须等待当前锁被释放后，才能成功上锁。也就是说，std::mutex可以保证，处于同一个mutex对象下的一对lock()和unlock()间的代码，不会有多个线程在同时运行。</p>
+<p>下面先介绍<code>mutex</code>类。</p>
+<h3 id="构造-2">构造</h3>
+<p><code>mutex</code>的构造不需要传递参数，直接<code>std::mutex mtx</code>即可。</p>
+<h3 id="方法-2">方法</h3>
+<ul>
+<li><code>lock()</code>方法
+<ul>
+<li>如果<code>mutex</code>现在没有被任何线程在占有，那么调用<code>mtx.lock()</code>函数可以锁住<code>mutex</code>，即<code>mutex</code>被调用<code>mtx.lock</code>的线程占有。</li>
+<li>如果<code>mutex</code>已经被其他线程占有，那么调用<code>mtx.lock()</code>函数的线程将会被阻滞，直到<code>mutex</code>被占有它的进程释放（执行<code>mtx.unlock()</code>）且本线程成功锁住<code>mutex</code>，线程才会恢复运行。</li>
+<li>如果在<code>mutex</code>已经被本线程锁定的情况下执行<code>mtx.lock()</code>函数，那么将会造成<strong>死锁</strong>。由于本教程为速成教程，故不在此解释死锁概念和其解决方法。但死锁概念在多线程编程中十分重要，建议读者百度自学。在此，你可以将<code>死锁</code>理解为一把会将进程彻底锁死的锁，产生<code>死锁</code>后线程将被阻滞且不会被唤醒。</li>
+</ul>
+</li>
+<li><code>unlock()</code>方法
+<ul>
+<li>解锁本线程锁定的<code>mutex</code>，以便其他线程可以占有<code>mutex</code></li>
+</ul>
+</li>
+</ul>
+<p>下面使用<code>mutex</code>解决一个程序中多线程竞争内存导致的错误：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">std::mutex mtx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_a</span><span class="params">([&amp;]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">        &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">            mtx.lock();</span></span></span><br><span class="line"><span class="params"><span class="function">            num++;</span></span></span><br><span class="line"><span class="params"><span class="function">            mtx.unlock();</span></span></span><br><span class="line"><span class="params"><span class="function">        &#125;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_b</span><span class="params">([&amp;]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">        &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">            mtx.lock();</span></span></span><br><span class="line"><span class="params"><span class="function">            num++;</span></span></span><br><span class="line"><span class="params"><span class="function">            mtx.unlock();</span></span></span><br><span class="line"><span class="params"><span class="function">        &#125;</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    thread_a.<span class="built_in">join</span>();</span><br><span class="line">    thread_b.<span class="built_in">join</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;result: &quot;</span> &lt;&lt; num &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result: 200000</span><br></pre></td></tr></table></figure>
+<p><code>mutex</code>已经十分方便了，但是<code>c++11</code>还提供了更方便的工具<code>unique_lock</code>，他和<code>mutex</code>一样封装在<code>&lt;mutex&gt;</code>头文件下，下面将介绍<code>unique_lock</code>。</p>
+<h3 id="构造-3">构造</h3>
+<p>由于std::mutex需要手动unlock()，当一个代码段有多个退出点时，需要在每个退出点都加上unlock()，容易漏。而且如果该代码段还会抛出异常，手动unlock()会更加麻烦。这时我们通常会使用std::unique_lock或std::scoped_lock，这两个类型的作用就是在构造这个类型的对象时，传入一个std::mutex，随后会自动加锁，在对象析构时，也会自动释放锁。</p>
+<p><code>unique_lock</code>类较简单的构造方法为使用<code>mutex</code>进行构造，构造函数为<code>unique_lock (mutex_type&amp; m);</code>。 e.g.：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unique_lock lock(mtx);</span><br></pre></td></tr></table></figure>
+<p><code>unique_lock</code>在构造时会自动获取<code>mutex</code>，如果无法锁住<code>mutex</code>，则此线程会停滞，直到成功获取<code>mutex</code>。 在<code>unique_lock</code>被析构时，他会自动<code>unlock</code>自己获取的<code>mutex</code>。这使得他在许多地方非常方便实用。</p>
+<p>下面将用<code>unique_lock</code>实现上一段代码中<code>mutex</code>同样的效果。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">std::mutex mtx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_a</span><span class="params">([&amp;]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">        &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">            std::unique_lock&lt;std::mutex&gt; lock(mtx);</span></span></span><br><span class="line"><span class="params"><span class="function">            num++;</span></span></span><br><span class="line"><span class="params"><span class="function">        &#125;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_b</span><span class="params">([&amp;]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">        &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">            std::unique_lock&lt;std::mutex&gt; lock(mtx);</span></span></span><br><span class="line"><span class="params"><span class="function">            num++;</span></span></span><br><span class="line"><span class="params"><span class="function">        &#125;</span></span></span><br><span class="line"><span class="params"><span class="function"></span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    thread_a.<span class="built_in">join</span>();</span><br><span class="line">    thread_b.<span class="built_in">join</span>();</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;result: &quot;</span> &lt;&lt; num &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段程序也可以得到正确的输出结果。</p>
+<p>同时，<code>unique_lock</code>还有一个很方便的方法：<code>try_lock()</code>，这个函数会尝试锁住当前线程并返回一个<code>bool</code>值表示是否成功锁住，但不论是否成功锁住当前线程，当前线程都会继续运行。</p>
+<h3 id="原子变量和互斥锁的区别">原子变量和互斥锁的区别</h3>
+<p>互斥锁是通过线程休眠来等待其他线程完成当前任务，而原子变量是通过CPU空转来等待其他线程完成当前任务（准确的说是通过总线锁，但表现形式上和空转等待差不多）。因为没有发生线程切换，所以也就节省了线程切换时的开销。</p>
+<h2 id="第三部分：condition-variable">第三部分：condition_variable</h2>
+<p>在有些场景下，一个线程可能希望满足一个条件后才继续运行，否则线程休眠等待该条件的发生。最典型的情况就是线程等待用户的输入，在没有用户输入时，线程直接休眠等待输入。这种情况就可以使用条件变量。</p>
+<p><code>condition_variable</code>库提供了方便的与条件变量相关的类和函数，封装在头文件<code>&lt;condition_variable&gt;</code>下。</p>
+<h3 id="构造-4">构造</h3>
+<p><code>condition_variable</code>类有默认构造函数，可以直接构造，不需要传递参数。 e.g.：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::condition_variable cv;</span><br></pre></td></tr></table></figure>
+<h3 id="方法-3">方法</h3>
+<ul>
+<li><code>wait(unique_lock&lt;mutex&gt;&amp; lck, Predicate pred)</code>方法
+<ul>
+<li><code>wait</code>方法传入的两个参数分别为<code>unique_lock</code>和一个返回值为<code>bool</code>的函数</li>
+<li>如果<code>pred</code>函数返回值为真，线程会正常运行，否则线程会被阻滞。</li>
+<li>在调用<code>wait</code>函数的同时，<code>lck.unlock()</code>会被自动调用，以保证其他线程正常运行。</li>
+<li>当函数<code>notified_all()</code>被调用时，如果函数<code>pred</code>为真，线程会恢复运行。</li>
+</ul>
+</li>
+<li><code>notified_all()</code>方法
+<ul>
+<li><code>notified_all</code>将试图唤醒所有被此<code>condition_variable</code>阻滞的线程，只有在线程<code>wait</code>函数的返回值为真的情况下程序会恢复运行</li>
+</ul>
+</li>
+</ul>
+<p>下面是一个例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::mutex mtx;</span><br><span class="line">std::condition_variable cv;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_a</span><span class="params">([]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        std::unique_lock&lt;std::mutex&gt; lock(mtx);</span></span></span><br><span class="line"><span class="params"><span class="function">        cv.wait(lock, [=]()&#123;<span class="keyword">return</span> flag;&#125;);</span></span></span><br><span class="line"><span class="params"><span class="function">        lock.unlock();</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">            std::cerr &lt;&lt; <span class="string">&quot;thread a once\n&quot;</span>;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    <span class="function">std::thread <span class="title">thread_b</span><span class="params">([]()</span></span></span><br><span class="line"><span class="params"><span class="function">    &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        std::unique_lock&lt;std::mutex&gt; lock(mtx);</span></span></span><br><span class="line"><span class="params"><span class="function">        cv.wait(lock, [=]()&#123;<span class="keyword">return</span> flag;&#125;);</span></span></span><br><span class="line"><span class="params"><span class="function">        lock.unlock();</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)</span></span></span><br><span class="line"><span class="params"><span class="function">            std::cerr &lt;&lt; <span class="string">&quot;thread b once\n&quot;</span>;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125;)</span></span>;</span><br><span class="line">    thread_a.<span class="built_in">detach</span>();</span><br><span class="line">    thread_b.<span class="built_in">detach</span>();</span><br><span class="line">    mtx.<span class="built_in">lock</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;thread main: &quot;</span> &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">    flag = <span class="literal">true</span>;</span><br><span class="line">    mtx.<span class="built_in">unlock</span>();</span><br><span class="line">    cv.<span class="built_in">notify_all</span>();</span><br><span class="line">    std::this_thread::<span class="built_in">sleep_for</span>(std::chrono::<span class="built_in">seconds</span>(<span class="number">5</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<code>condition_variable</code>的延迟使得主线程中的内容先输出后子线程的内容才输出。</p>
+<p>另外一个例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std::chrono;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义条件变量</span></span><br><span class="line">std::condition_variable cv;</span><br><span class="line"><span class="comment">// 条件变量需要配合互斥锁使用</span></span><br><span class="line">std::mutex mtx;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个函数模拟用户产生输入</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">user</span><span class="params">(std::string &amp;str, <span class="type">bool</span> &amp;is_exit)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 共计产生100个输入</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">100</span>; i++)&#123;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="function">std::unique_lock <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">            <span class="comment">// 产生一个输入</span></span><br><span class="line">            str = <span class="string">&quot;input &quot;</span> + std::<span class="built_in">to_string</span>(i);</span><br><span class="line">            <span class="comment">// 唤醒一个等待中的线程</span></span><br><span class="line">            cv.<span class="built_in">notify_one</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 线程休眠1s,模拟用户每秒产生一个输入</span></span><br><span class="line">        std::this_thread::<span class="built_in">sleep_for</span>(<span class="number">1</span>s);</span><br><span class="line">    &#125;</span><br><span class="line">    is_exit = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 唤醒一个等待中的线程</span></span><br><span class="line">    cv.<span class="built_in">notify_one</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">bool</span> is_exit = <span class="literal">false</span>;                <span class="comment">// 用于标志线程是否运行完毕</span></span><br><span class="line">    std::string str;                     <span class="comment">// 用于接收用户输入</span></span><br><span class="line">    <span class="function">std::thread <span class="title">t1</span><span class="params">(user, str, is_exit)</span></span>;  <span class="comment">// 启动模拟用户输入线程</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="function">std::unique_lock <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">        <span class="comment">// 这个条件变量等待的条件是，线程执行完毕或字符串非空（表示有用户输入）</span></span><br><span class="line">        cv.<span class="built_in">wait</span>(lock, []()&#123;<span class="keyword">return</span> is_exit || !str.<span class="built_in">empty</span>()&#125;);</span><br><span class="line">        <span class="comment">// 如果线程结束，则退出主循环</span></span><br><span class="line">        <span class="keyword">if</span>(is_exit) <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">// 打印用户输入，并清空用户输入，用于接收下一个用户输入</span></span><br><span class="line">        std::cout &lt;&lt; str &lt;&lt; std::endl;</span><br><span class="line">        str.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>条件变量的使用有几个关键点：</p>
+<ul>
+<li>必须配合互斥锁使用</li>
+<li>每当条件变量等待的条件发生变化，必须手动调用条件变量的唤醒函数notify_one()或notify_all()</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">pengchang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/27/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/">http://example.com/2022/08/27/%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">PC</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/24/IMU%E5%A7%BF%E6%80%81%E8%A7%A3%E7%AE%97/"><img class="next-cover" src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">IMU姿态解算</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241424400.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">pengchang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pcpengchang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/pcpengchang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1767191006@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9Athread%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">第一部分：thread类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0"><span class="toc-number">1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9Amutex%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">第二部分：mutex类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-2"><span class="toc-number">2.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-2"><span class="toc-number">2.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-3"><span class="toc-number">2.3.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E5%92%8C%E4%BA%92%E6%96%A5%E9%94%81%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.4.</span> <span class="toc-text">原子变量和互斥锁的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9Acondition-variable"><span class="toc-number">3.</span> <span class="toc-text">第三部分：condition_variable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0-4"><span class="toc-number">3.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-3"><span class="toc-number">3.2.</span> <span class="toc-text">方法</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By pengchang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
