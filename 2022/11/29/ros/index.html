@@ -1,0 +1,980 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ros | PC</title><meta name="author" content="pengchang"><meta name="copyright" content="pengchang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一、ROS介绍ROS 是机器人操作系统的简称(Robot Operating System)，其具备操作系统的许多功能。但是在实际应用中，它需要建立在计算机操作系统之上，例如 Linux，因此有时候也称 ROS 为元操作系统。 ROS 的主要功能是提供用户、计算机操作系统以及外部设备间的通讯功能，这些外部设备包括传感器、摄像机，同时也包括机器人。与其它操作系统一样，ROS 的优点在于其硬件抽象能力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ros">
+<meta property="og:url" content="http://example.com/2022/11/29/ros/index.html">
+<meta property="og:site_name" content="PC">
+<meta property="og:description" content="一、ROS介绍ROS 是机器人操作系统的简称(Robot Operating System)，其具备操作系统的许多功能。但是在实际应用中，它需要建立在计算机操作系统之上，例如 Linux，因此有时候也称 ROS 为元操作系统。 ROS 的主要功能是提供用户、计算机操作系统以及外部设备间的通讯功能，这些外部设备包括传感器、摄像机，同时也包括机器人。与其它操作系统一样，ROS 的优点在于其硬件抽象能力">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg">
+<meta property="article:published_time" content="2022-11-29T08:40:38.000Z">
+<meta property="article:modified_time" content="2022-11-29T08:41:56.488Z">
+<meta property="article:author" content="pengchang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg"><link rel="shortcut icon" href="/img/1.png"><link rel="canonical" href="http://example.com/2022/11/29/ros/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ros',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-29 16:41:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241424400.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">PC</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ros</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-29T08:40:38.000Z" title="发表于 2022-11-29 16:40:38">2022-11-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-29T08:41:56.488Z" title="更新于 2022-11-29 16:41:56">2022-11-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ros"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="一、ROS介绍"><a href="#一、ROS介绍" class="headerlink" title="一、ROS介绍"></a>一、ROS介绍</h3><p>ROS 是机器人操作系统的简称(Robot Operating System)，其具备操作系统的许多功能。但是在实际应用中，它需要建立在计算机操作系统之上，例如 Linux，因此有时候也称 ROS 为元操作系统。 ROS 的主要功能是提供用户、计算机操作系统以及外部设备间的通讯功能，这些外部设备包括传感器、摄像机，同时也包括机器人。与其它操作系统一样，ROS 的优点在于其硬件抽象能力，以及它所具备的在不需要用户详尽了解机器人各种细节的前提下对机器人进行控制的能力。</p>
+<p><strong>下面介绍 ROS 节点、话题与消息、节点管理器</strong></p>
+<h5 id="1-ROS-节点-Node"><a href="#1-ROS-节点-Node" class="headerlink" title="1. ROS 节点(Node)"></a>1. ROS 节点(Node)</h5><p>一般而言，节点就是执行某些动作的进程。ROS 节点本身实际上就是一个软件模块，除了具体的软件功能之外，还具有注册连接到 ROS 节点服务器，并和 ROS 网络中的其它节点通信的功能。 ROS 节点的设计理念是每一个节点都是独立的模块，相互之间通过 ROS 的通信能力实现交互。</p>
+<p>对于节点而言，既可以独立地运行代码来完成其作业任务，也可以通过发送或接收消息来与其它节点进行通信。消息包含了数据、命令或者其它对于应用程序而言必要的信息。</p>
+<h5 id="2-ROS-话题-Topic"><a href="#2-ROS-话题-Topic" class="headerlink" title="2. ROS 话题(Topic)"></a>2. ROS 话题(Topic)</h5><p>对于节点而言，有些节点主要为其它节点提供信息，例如为节点提供摄像机图像数据。这样的节点发布信息，并由其它节点接收。这些发布的信息，在 ROS 中称为话题。话题定义了将由该话题发送的消息的类型。</p>
+<p>传递数据的节点发布话题的名称以及将要发送的消息的类型。节点能够订阅话题，订阅了话题的节点将能够接收话题传递的消息。</p>
+<h5 id="3-ROS-消息-Message"><a href="#3-ROS-消息-Message" class="headerlink" title="3. ROS 消息(Message)"></a>3. ROS 消息(Message)</h5><p>在 ROS 中，消息是由<strong>消息类型</strong>和<strong>数据格式</strong>共同定义的。举个 C 语言中的例子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">People</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> age;</span><br><span class="line">  <span class="built_in">string</span> name;</span><br><span class="line">&#125; people;</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，可以把 people 看作是消息对象。那么，int 和 string 则为消息类型，People 为数据格式。也就是说，在 C 语言中，srtuct 关键字定义了数据的类型和结构。在 ROS 中也有类似的方法定义消息类型，并且最后生成可供调用的头文件中也是以结构体的方式组织的。我们会在实战部分进行讲解演示。</p>
+<h5 id="4-节点管理器-Master"><a href="#4-节点管理器-Master" class="headerlink" title="4. 节点管理器(Master)"></a>4. 节点管理器(Master)</h5><p>ROS 节点通常是小的，能够同时在多个系统上运行的独立程序。在 ROS 中，Master 为节点提供命名和注册服务。它能够跟踪话题的发布来源和订阅者。节点间的通信是通过 ROS 节点管理器建立的。</p>
+<p>在 Linux 下，使用 roscore 命令可以启动 ROS Master。ROS Master 使得节点能够注册。因此，在运行 ROS 程序时，一定要先执行 roscore 命令。这一点在实战的讲解中还会反复强调。</p>
+<h3 id="二、ROS的标准文件结构"><a href="#二、ROS的标准文件结构" class="headerlink" title="二、ROS的标准文件结构"></a>二、ROS的标准文件结构</h3><p>新建一个文件夹，在终端执行以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir src #新建源目录</span><br><span class="line">cd src</span><br><span class="line">catkin_init_workspace</span><br><span class="line">cd .. #回到新建的文件夹</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<p>便可以看到文件夹下生成了 src build devel 三个文件夹，如下图所示</p>
+<p><img src="https://pic1.zhimg.com/v2-3dd9de3dcdf7eba39901fc96f0aca280_r.jpg"></p>
+<p>其中最顶层的catkin工作空间，它是整个ROS工程中层次最高的概念。这个也是管理和组织ROS工程项目的地方，编译和运行都在这里进行。<br>其下一层的一级目录有4个：</p>
+<ul>
+<li>src：源空间</li>
+<li>build：编译空间</li>
+<li>devel：开发空间</li>
+<li><sup>*</sup>install：安装空间（该文件夹不是默认创建的，需要执行catkin_make install 才会被创建。不过一般来说不会使用到这个命令，因此后文也不讨论该文件夹）</li>
+</ul>
+<h4 id="1-src：源空间"><a href="#1-src：源空间" class="headerlink" title="1.src：源空间"></a>1.src：源空间</h4><p>存放功能包（package）。</p>
+<p>创建功能包的命令如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd src #确保当前在src源空间当中</span><br><span class="line">catkin_create_pkg package roscpp rospy std_msgs</span><br></pre></td></tr></table></figure>
+<font size=2 color=red>上述最后一段命令的作用是创建名为package（第一个参数）的功能包，
+并为其添加roscpp、rospy、std_msgs三个依赖功能包。这里是通过命令的方式直接添加，因此生成的配置文件CMakeLists.txt和package.xml也是已经配置好了的。如果后期需要添加新的依赖，则需要自己手动修改上述配置文件中的内容。<br>
+关于ros已有的常用功能包，我们会在后一章节进行介绍</font>
+
+<p>功能包是ROS文件系统中组织程序文件的基本单元，也就是catkin编译的基本单元。一个 package 下必须包含 CMakeLists.txt 和 package.xml 两个文件：</p>
+<ul>
+<li>CMakeLists.txt 文件中规定了功能包的编译规则，包括指定功能包名称，指定编译依赖项，指定要编译的源文件，指定要添加的消息格式文件/服务格式文件/动作格式文件，指定生成的消息/服务/动作，指定头文件搜索目录，指定链接库搜索目录，指定生成的静态链接库文件，指定需要链接的库文件，指定编译生成的可执行文件以及路径等等。</li>
+<li>package.xml 文件定义了功能包的属性信息，包括包名，版本号，作者，编译依赖和运行依赖等。</li>
+</ul>
+<p>另外，还有几个文件夹：</p>
+<ul>
+<li>include 和 src 分别存放头文件（<em>.h）和源程序文件（\</em>.c/*.cpp等）</li>
+<li>scripts 存放脚本文件（比如Python文件 *.py，shell文件 *.sh）</li>
+<li>launch 存放 launch文件（*.launch），用于批量运行多个可执行文件</li>
+<li>config 存放配置文件（*.yaml等）；</li>
+<li>此外，还包括消息（*.msg）、服务（*.srv）以及动作（*.action）。</li>
+</ul>
+<p>如果有读者按照前面的命令创建了一个package包，则会发现文件夹下只有include和src两个子文件夹。其实问题不大，剩下的缺少了的文件夹根据需要自己手动创建即可。</p>
+<h4 id="2-build：编译空间"><a href="#2-build：编译空间" class="headerlink" title="2.build：编译空间"></a>2.build：编译空间</h4><p>存放CMake和catkin的缓存信息、配置信息和其他中间文件。</p>
+<p>若程序转移到了不同的电脑上，亦或是修改了最顶层文件夹的名字，则需要将build文件夹删除并重新执行catkin_make命令。此时，该命令会重新生成build文件夹并进行相应配置。</p>
+<h4 id="3-devel：开发空间"><a href="#3-devel：开发空间" class="headerlink" title="3.devel：开发空间"></a>3.devel：开发空间</h4><p>存放编译后生成的目标文件以及setup文件，包括头文件、动态&amp;静态链接库、可执行文件等。</p>
+<p>setup文件是用于向终端注册当前程序的，否则程序就无法在当前终端启动。这一点读者可以在实际开发中体会。</p>
+<p>此外，用户自定义的消息类型在经过编译后也会在devel文件夹中生成相应的头文件，之后使用时必须引用此头文件。因此，一般自定义消息类型的工作是放在最开始的时候，并且在使用之前需要进行编译。可以在ROS实战中的用户自定义消息中体会。</p>
+<h3 id="三、ROS功能包、常用功能包介绍"><a href="#三、ROS功能包、常用功能包介绍" class="headerlink" title="三、ROS功能包、常用功能包介绍"></a>三、ROS功能包、常用功能包介绍</h3><p>ROS系统自带一些常用的功能包，可以在终端输入 rosrun 然后按 tab 查看所有自带的功能包。如下图:</p>
+<div align=center><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/all_package.png" style="center"></div>
+
+<p>整个ROS包括的包和层级如下：</p>
+<p><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/ros_pkgs.png"></p>
+<p>此处介绍一些在实际开发中会使用到的ROS功能包。若后续有新的需求，会相应进行补充介绍。</p>
+<h4 id="1、roscpp"><a href="#1、roscpp" class="headerlink" title="1、roscpp"></a>1、roscpp</h4><p>ROS的C++库，是目前最广泛应用的ROS客户端库，执行效率高</p>
+<p>roscpp的主要部分和功能简介如下（加粗的是今后会使用到的部分）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">roscpp的主要部分</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>ros::init()</strong></td>
+<td style="text-align:center">解析传入的ROS参数，创建node第一步需要用到的函数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>ros::NodeHandle</strong></td>
+<td style="text-align:center">和topic、service、param等交互的公共接口</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::master</td>
+<td style="text-align:center">包含从master查询信息的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::this_node</td>
+<td style="text-align:center">包含查询这个进程(node)的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::service</td>
+<td style="text-align:center">包含查询服务的函数</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::param</td>
+<td style="text-align:center">包含查询参数服务器的函数，而不需要用到NodeHandle</td>
+</tr>
+<tr>
+<td style="text-align:center">ros::names</td>
+<td style="text-align:center">包含处理ROS图资源名称的函数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>总的来说，roscpp的功能分为以下几类：初始化与关闭、话题、服务、参数服务器、定时器、节点句柄、回调和自旋、日志、名称管理、时钟、异常</p>
+<p>这些内容是ROS下用C++开发的基础，开发中多多少少都会用到。读者可以在实际项目中进行体会。</p>
+<p>官方文档：<a target="_blank" rel="noopener" href="http://docs.ros.org/en/api/roscpp/html/index.html">http://docs.ros.org/en/api/roscpp/html/index.html</a></p>
+<h4 id="2、rospy"><a href="#2、rospy" class="headerlink" title="2、rospy"></a>2、rospy</h4><p>rospy是Python版本的ROS客户端库，提供了Python编程需要的接口。rospy包含的功能与roscpp相似，都有关于node、topic、service、param、time相关的操作。但同时rospy和roscpp也有一些区别：</p>
+<ol>
+<li>rospy没有一个NodeHandle，像创建publisher、subscriber等操作都被直接封装成了rospy中的函数或类，调用起来简单直观。</li>
+<li>rospy一些接口的命名和roscpp不一致，有些地方需要开发者注意，避免调用错误。</li>
+</ol>
+<p>ROS Python 中常用的API如下，与 C++ 略有不同：</p>
+<ul>
+<li>Node 相关<br><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/rospy1.jpg"></li>
+<li>Publisher 相关<br><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/rospy2.jpg"></li>
+<li>Subscriber 相关<br><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/rospy3.jpg"></li>
+</ul>
+<p>(由于 ROS 官方的API文档404了，想进一步了解的读者可以在项目实战中体会，或是自己查阅相关资料进行了解)</p>
+<p>这里放上编写该部分时的参考资料：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/449107620">https://zhuanlan.zhihu.com/p/449107620</a></p>
+<h4 id="3、std-msgs"><a href="#3、std-msgs" class="headerlink" title="3、std_msgs"></a>3、std_msgs</h4><p>std_msgs 包含了 ROS 中的中基本的消息类型，如果需要依靠话题-消息方式进行节点间通讯，则必须要添加 std_msgs 这个依赖包。</p>
+<h4 id="4、message-generation"><a href="#4、message-generation" class="headerlink" title="4、message_generation"></a>4、message_generation</h4><p>用于生成消息类型的功能包，在创建自定义消息类型的项目中必须包括这个包。关于自定义消息类型，我们会在下一小节进行讲解。</p>
+<h4 id="5、sensor-msgs-重点是其中的image"><a href="#5、sensor-msgs-重点是其中的image" class="headerlink" title="5、sensor_msgs 重点是其中的image"></a>5、sensor_msgs 重点是其中的image</h4><p>这个是 ROS 中定义传感器消息类型的功能包，是 ROS 为机器人身上传感器所产生的数据提供的比较方便的程序接口。我们目前并没有做得这么深入，因此我们只需要了解其中的 image 类型即可。</p>
+<p>简单来说，image 类型是 ROS 能够通过消息机制直接传递的图片类型。OpenCV 中的 cv::Mat 可以通过 cv_bridge 包，以 image_transport 为消息载体实现与 sensor_msg::image 之间的相互转换，从而实现图像的传输。cv_bridge 和 image_transport 两个功能包将在接下来进行讲解。</p>
+<h4 id="6、cv-bridge"><a href="#6、cv-bridge" class="headerlink" title="6、cv_bridge"></a>6、cv_bridge</h4><p>cv_bridge 从字面上也很好理解：它是实现 OpenCV 数据类型和 ROS 消息类型之间转换的桥梁。</p>
+<p>使用方法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat src; <span class="comment">//假设此处src非空</span></span><br><span class="line">sensor_msgs::ImagePtr msg;</span><br><span class="line"></span><br><span class="line"><span class="comment">//src -&gt; msg</span></span><br><span class="line">msg=cv_bridge::<span class="built_in">CvImage</span>(std_msgs::<span class="built_in">Header</span>(),<span class="string">&quot;bgr8&quot;</span>,src).<span class="built_in">toImageMsg</span>();</span><br><span class="line"><span class="comment">//msg-&gt;src</span></span><br><span class="line">src=cv_bridge::<span class="built_in">toCvShare</span>(msg,<span class="string">&quot;bgr8&quot;</span>)-&gt;image; </span><br></pre></td></tr></table></figure>
+<p>上述代码中，”bgr8” 表示的是三个通道一次为 b,g,r 且每个通道占8位。这也是 OpenCV 中三通道图像最常用的颜色空间。如果要传输的是单通道的图像，字符串需改为 “mono8”。</p>
+<font color=red size=2>
+在我们的实际项目中，相机采集的图像理论上是可以直接用 ROS 中的类型进行表示的。但是当前已有的相机驱动程序是几年前老学长写的，其中图像是用 OpenCV 中的 Mat 类进行表示的。 因此，在使用 ROS 时需要进行图像类型的转换，显然在执行过程中需要额外的开销。所以现有的相机驱动需要修改，改为使用 ROS 中的消息类型进行表示。这样的话，图像转换只需要在 DEBUG 模式下使用，将消息类型的图像转换为 cv::Mat 类型并在屏幕上显示出来。这样可以保证在实际执行过程中性能不受影响。
+</font>
+
+<h4 id="7、image-transport"><a href="#7、image-transport" class="headerlink" title="7、image_transport"></a>7、image_transport</h4><p>image_transport 是 ROS 中用于图像消息传输的功能包。在创建对象时，需要使用已有的 ros::NodeHandle 对象进行初始化，之后的一系列使用方法跟 ros::NodeHandle 基本上一致。</p>
+<p>使用方法示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">imageCallback</span><span class="params">(<span class="type">const</span> sensor_msgs::ImageConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化对象</span></span><br><span class="line"><span class="function">image_transport::ImageTransport <span class="title">it</span><span class="params">(nh)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建订阅者对象</span></span><br><span class="line">image_transport::Subscriber sub = it.<span class="built_in">subscribe</span>(<span class="string">&quot;topic_name&quot;</span>, <span class="number">1</span>, imageCallback);</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建发布者对象</span></span><br><span class="line"><span class="comment">//（消息类型为sensor_msgs::ImagePtr，这里隐形声明了）</span></span><br><span class="line">image_transport::Publisher pub = it.<span class="built_in">advertise</span>(<span class="string">&quot;topic_name&quot;</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="8、总结"><a href="#8、总结" class="headerlink" title="8、总结"></a>8、总结</h4><ol>
+<li>通过上面的例子，我们会发现 ROS 中不同的功能包有着不同的命名空间，且命名空间的名称基本上与功能包的名称相同。对于 C++ 代码而言，可以使结构更加清晰，也方便初学者在阅读源码时了解功能包是怎么工作的、在哪里工作、不同功能包之间是怎么关联的。这一点在实战中会有所体会</li>
+<li>在学习了 sensor_msg::image、cv_bridge、image_transport 三个功能包后，读者可以参考下图，了解这三个功能包是怎么合作实现 cv::Mat 图像类型的传输的。</li>
+</ol>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/img_transport.png" width="70%">
+
+cv::Mat 图像传递流程图
+</div>
+
+<h3 id="四、ROS中的标准消息类型和自定义消息类型"><a href="#四、ROS中的标准消息类型和自定义消息类型" class="headerlink" title="四、ROS中的标准消息类型和自定义消息类型"></a>四、ROS中的标准消息类型和自定义消息类型</h3><p>ROS使用了一种简化的消息类型描述语言来描述ROS节点发布的数据值。通过这样的描述语言，ROS能够使用多种编程语言生成不同类型消息的源代码。</p>
+<h4 id="ROS消息所使用的标准数据类型"><a href="#ROS消息所使用的标准数据类型" class="headerlink" title="ROS消息所使用的标准数据类型"></a>ROS消息所使用的标准数据类型</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">基本类型</th>
+<th style="text-align:center">串行化</th>
+<th style="text-align:center">C++</th>
+<th style="text-align:center">Python2 / Python3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">unsigned 8-bit int</td>
+<td style="text-align:center">uint8_t</td>
+<td style="text-align:center">bool</td>
+</tr>
+<tr>
+<td style="text-align:center">int8</td>
+<td style="text-align:center">signed 8-bit int</td>
+<td style="text-align:center">int8_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">uint8</td>
+<td style="text-align:center">unsigned 8-bit int</td>
+<td style="text-align:center">uint8_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">int16</td>
+<td style="text-align:center">signed 16-bit int</td>
+<td style="text-align:center">int16_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">uint16</td>
+<td style="text-align:center">unsigned 16-bit int</td>
+<td style="text-align:center">uint16_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">int32</td>
+<td style="text-align:center">signed 32-bit int</td>
+<td style="text-align:center">int32_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">uint32</td>
+<td style="text-align:center">unsigned 32-bit int</td>
+<td style="text-align:center">uint32_t</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">int64</td>
+<td style="text-align:center">signed 64-bit int</td>
+<td style="text-align:center">int64_t</td>
+<td style="text-align:center">long int</td>
+</tr>
+<tr>
+<td style="text-align:center">uint64</td>
+<td style="text-align:center">unsigned 64-bit int</td>
+<td style="text-align:center">uint64_t</td>
+<td style="text-align:center">long int</td>
+</tr>
+<tr>
+<td style="text-align:center">float32</td>
+<td style="text-align:center">32-bit IEEE float</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">float</td>
+</tr>
+<tr>
+<td style="text-align:center">float64</td>
+<td style="text-align:center">64-bit IEEE float</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">float</td>
+</tr>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">ascii string</td>
+<td style="text-align:center">std::string</td>
+<td style="text-align:center">str bytes</td>
+</tr>
+<tr>
+<td style="text-align:center">time</td>
+<td style="text-align:center">secs/nsecs unsigned 32-bit ints</td>
+<td style="text-align:center">ros::Time</td>
+<td style="text-align:center">rospy.Time</td>
+</tr>
+<tr>
+<td style="text-align:center">duration</td>
+<td style="text-align:center">secs/nsecs signed 32-bit ints</td>
+<td style="text-align:center">ros::Duration</td>
+<td style="text-align:center">rospy.Duration</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="自定义消息类型"><a href="#自定义消息类型" class="headerlink" title="自定义消息类型"></a>自定义消息类型</h4><p><strong>（注：此处仅讲解自定义消息类型的语法和理论，程序实现请参考ROS实战中的相关内容）</strong></p>
+<p>显然，ROS提供的标准消息类型很简单，并不能直接满足编程需要，因此在实际的消息传递过程中，使用的消息往往是用户自定义的消息类型。</p>
+<p>在 ROS 中，用户可以通过选取若干标准消息类型进行组合（类似于结构体），同时可以指定偏移量（定长不定长均可）。</p>
+<p>例如下面一个自定义消息类型的文件：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MyMsg.msg</span></span><br><span class="line"></span><br><span class="line">time stamp         <span class="comment"># 时间戳</span></span><br><span class="line">uint32 data_len    <span class="comment"># 数据长度</span></span><br><span class="line">uint8[] data       <span class="comment"># 数据，不定长</span></span><br><span class="line">uint8[<span class="number">20</span>] data_fixed <span class="comment"># 定长数据，长度为20</span></span><br></pre></td></tr></table></figure>
+<p>该消息包括时间戳、不定长数据部分（数据长度和数据数组）和定长数据部分。</p>
+<p>可以通过命令查看自定义的MyMsg消息类型，如下图：<br><img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/show-MyMsg.png"></p>
+<p>关于自定义消息类型的声明和使用，我们会在ROS实战中进行介绍。</p>
+<h2 id="ROS-实战"><a href="#ROS-实战" class="headerlink" title="ROS 实战"></a>ROS 实战</h2><p>“亲身下河知深浅、亲口尝梨知酸甜。” 在大致了解了 ROS 理论知识后，一定要动手实践，才知道自己是否掌握了所学的知识点。因此，在接下来的 ROS 实战中，每一个任务都需要先自己独立思考。如果确实没思路或者不会，可以参考提供的源代码，但在参考完之后仍需要自己再写一遍，去理解每一行代码实现了什么功能，为什么要这么实现。相信经过完整的实战练习，每个人都能掌握 ROS ，并将其应用到实际的视觉项目中。</p>
+<h3 id="零、先导知识"><a href="#零、先导知识" class="headerlink" title="零、先导知识"></a>零、先导知识</h3><h4 id="常用的-ROS-命令介绍"><a href="#常用的-ROS-命令介绍" class="headerlink" title="常用的 ROS 命令介绍"></a>常用的 ROS 命令介绍</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">使用示例</th>
+<th style="text-align:center">示例说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">roscore</td>
+<td style="text-align:center">roscore</td>
+<td style="text-align:center">注册ROS Master节点</td>
+</tr>
+<tr>
+<td style="text-align:center">catkin_init_workspace</td>
+<td style="text-align:center">catkin_init_workspace</td>
+<td style="text-align:center">初始化工作空间<br/>(建立指向ROS内核的软连接)</td>
+</tr>
+<tr>
+<td style="text-align:center">catkin_create_pkg</td>
+<td style="text-align:center">catkin_create_pkg pkg_name pkg1 pkg2 …</td>
+<td style="text-align:center">创建名为pkg_name 的功能包，并添加pkg1 pkg2作为依赖功能包</td>
+</tr>
+<tr>
+<td style="text-align:center">catkin_make</td>
+<td style="text-align:center">catkin_make</td>
+<td style="text-align:center">配置+编译<br/>该命令相当于执行cmake跟make。如果在功能包CMakeLists.txt内没有找到需要编译的文件，则会跳过该功能包的make步骤。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">catkin_make —pkg pkg1 pkg2 …</td>
+<td style="text-align:center">只对指定的功能包进行编译</td>
+</tr>
+<tr>
+<td style="text-align:center">rosrun</td>
+<td style="text-align:center">rosrun pkg exec \<argv> …</td>
+<td style="text-align:center">运行pkg功能包中的exec程序。<br/>\<argv>是程序的外部参数，使用到的时候会进行讲解</td>
+</tr>
+<tr>
+<td style="text-align:center">rosnode list</td>
+<td style="text-align:center">rosnode list</td>
+<td style="text-align:center">列出当前所有的活动节点</td>
+</tr>
+<tr>
+<td style="text-align:center">rosnode kill</td>
+<td style="text-align:center">rosnode kill /node_name</td>
+<td style="text-align:center">杀死节点名称为node_name的节点</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="功能包中的-CMakeLists-txt-介绍"><a href="#功能包中的-CMakeLists-txt-介绍" class="headerlink" title="功能包中的 CMakeLists.txt 介绍"></a>功能包中的 CMakeLists.txt 介绍</h4><p>在用 ROS 命令创建完一个功能包后，会在功能包目录中生成一个 CMakeLists.txt 文件。这个文件内容很多，并且看起来比较复杂，初学者很容易被吓到。事实上，在这个 CMakeLists.txt 中几乎把所有可能使用到的 CMake 配置指令都写在里面并进行了注释，使用的好的话之后配置只需要取消注释并进行简单修改，十分方便。因此，帮助初学者了解这份 CMakeLists.txt 是非常有必要的。</p>
+<p>除了这里的讲解，建议读者自行阅读 CMakeLists.txt 中的说明性的注释。这些注释是 ROS 开发人员写的，基本上是最准确的使用方法。以下讲解只是我个人的观点，不够准确，且难免会有错误。如果遇到问题，以文件中的注释为主要参考。</p>
+<p><strong>说明：1. 以下内容，带 * 的只需要了解，不带 * 的要求掌握。</strong></p>
+<p><strong>2. 标题中的括号表示该部分对应在 CMakeLists.txt 中的行号。创建不同的功能包时，相同内容对应的行号可能不同。</strong></p>
+<p><strong>3. 为了方便读者理解，这里放上此处参考的CMakeLists.txt</strong></p>
+<p><strong>由于Gitee上没有显示行号，因此读者可以将以下内容拷贝到自己的编辑器中，或是直接将此文件下载到本地进行查看</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.0.2)</span><br><span class="line">project(pkg)</span><br><span class="line"></span><br><span class="line">## Compile as C++11, supported in ROS Kinetic and newer</span><br><span class="line"># add_compile_options(-std=c++11)</span><br><span class="line"></span><br><span class="line">## Find catkin macros and libraries</span><br><span class="line">## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)</span><br><span class="line">## is used, also find other catkin packages</span><br><span class="line">find_package(catkin REQUIRED COMPONENTS</span><br><span class="line">  roscpp</span><br><span class="line">  rospy</span><br><span class="line">  std_msgs</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">## System dependencies are found with CMake&#x27;s conventions</span><br><span class="line"># find_package(Boost REQUIRED COMPONENTS system)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Uncomment this if the package has a setup.py. This macro ensures</span><br><span class="line">## modules and global scripts declared therein get installed</span><br><span class="line">## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html</span><br><span class="line"># catkin_python_setup()</span><br><span class="line"></span><br><span class="line">################################################</span><br><span class="line">## Declare ROS messages, services and actions ##</span><br><span class="line">################################################</span><br><span class="line"></span><br><span class="line">## To declare and build messages, services or actions from within this</span><br><span class="line">## package, follow these steps:</span><br><span class="line">## * Let MSG_DEP_SET be the set of packages whose message types you use in</span><br><span class="line">##   your messages/services/actions (e.g. std_msgs, actionlib_msgs, ...).</span><br><span class="line">## * In the file package.xml:</span><br><span class="line">##   * add a build_depend tag for &quot;message_generation&quot;</span><br><span class="line">##   * add a build_depend and a exec_depend tag for each package in MSG_DEP_SET</span><br><span class="line">##   * If MSG_DEP_SET isn&#x27;t empty the following dependency has been pulled in</span><br><span class="line">##     but can be declared for certainty nonetheless:</span><br><span class="line">##     * add a exec_depend tag for &quot;message_runtime&quot;</span><br><span class="line">## * In this file (CMakeLists.txt):</span><br><span class="line">##   * add &quot;message_generation&quot; and every package in MSG_DEP_SET to</span><br><span class="line">##     find_package(catkin REQUIRED COMPONENTS ...)</span><br><span class="line">##   * add &quot;message_runtime&quot; and every package in MSG_DEP_SET to</span><br><span class="line">##     catkin_package(CATKIN_DEPENDS ...)</span><br><span class="line">##   * uncomment the add_*_files sections below as needed</span><br><span class="line">##     and list every .msg/.srv/.action file to be processed</span><br><span class="line">##   * uncomment the generate_messages entry below</span><br><span class="line">##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)</span><br><span class="line"></span><br><span class="line">## Generate messages in the &#x27;msg&#x27; folder</span><br><span class="line"># add_message_files(</span><br><span class="line">#   FILES</span><br><span class="line">#   Message1.msg</span><br><span class="line">#   Message2.msg</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Generate services in the &#x27;srv&#x27; folder</span><br><span class="line"># add_service_files(</span><br><span class="line">#   FILES</span><br><span class="line">#   Service1.srv</span><br><span class="line">#   Service2.srv</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Generate actions in the &#x27;action&#x27; folder</span><br><span class="line"># add_action_files(</span><br><span class="line">#   FILES</span><br><span class="line">#   Action1.action</span><br><span class="line">#   Action2.action</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Generate added messages and services with any dependencies listed here</span><br><span class="line"># generate_messages(</span><br><span class="line">#   DEPENDENCIES</span><br><span class="line">#   std_msgs</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">################################################</span><br><span class="line">## Declare ROS dynamic reconfigure parameters ##</span><br><span class="line">################################################</span><br><span class="line"></span><br><span class="line">## To declare and build dynamic reconfigure parameters within this</span><br><span class="line">## package, follow these steps:</span><br><span class="line">## * In the file package.xml:</span><br><span class="line">##   * add a build_depend and a exec_depend tag for &quot;dynamic_reconfigure&quot;</span><br><span class="line">## * In this file (CMakeLists.txt):</span><br><span class="line">##   * add &quot;dynamic_reconfigure&quot; to</span><br><span class="line">##     find_package(catkin REQUIRED COMPONENTS ...)</span><br><span class="line">##   * uncomment the &quot;generate_dynamic_reconfigure_options&quot; section below</span><br><span class="line">##     and list every .cfg file to be processed</span><br><span class="line"></span><br><span class="line">## Generate dynamic reconfigure parameters in the &#x27;cfg&#x27; folder</span><br><span class="line"># generate_dynamic_reconfigure_options(</span><br><span class="line">#   cfg/DynReconf1.cfg</span><br><span class="line">#   cfg/DynReconf2.cfg</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">###################################</span><br><span class="line">## catkin specific configuration ##</span><br><span class="line">###################################</span><br><span class="line">## The catkin_package macro generates cmake config files for your package</span><br><span class="line">## Declare things to be passed to dependent projects</span><br><span class="line">## INCLUDE_DIRS: uncomment this if your package contains header files</span><br><span class="line">## LIBRARIES: libraries you create in this project that dependent projects also need</span><br><span class="line">## CATKIN_DEPENDS: catkin_packages dependent projects also need</span><br><span class="line">## DEPENDS: system dependencies of this project that dependent projects also need</span><br><span class="line">catkin_package(</span><br><span class="line">#  INCLUDE_DIRS include</span><br><span class="line">#  LIBRARIES pkg</span><br><span class="line">#  CATKIN_DEPENDS roscpp rospy std_msgs</span><br><span class="line">#  DEPENDS system_lib</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">###########</span><br><span class="line">## Build ##</span><br><span class="line">###########</span><br><span class="line"></span><br><span class="line">## Specify additional locations of header files</span><br><span class="line">## Your package locations should be listed before other locations</span><br><span class="line">include_directories(</span><br><span class="line"># include</span><br><span class="line">  $&#123;catkin_INCLUDE_DIRS&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">## Declare a C++ library</span><br><span class="line"># add_library($&#123;PROJECT_NAME&#125;</span><br><span class="line">#   src/$&#123;PROJECT_NAME&#125;/pkg.cpp</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Add cmake target dependencies of the library</span><br><span class="line">## as an example, code may need to be generated before libraries</span><br><span class="line">## either from message generation or dynamic reconfigure</span><br><span class="line"># add_dependencies($&#123;PROJECT_NAME&#125; $&#123;$&#123;PROJECT_NAME&#125;_EXPORTED_TARGETS&#125; $&#123;catkin_EXPORTED_TARGETS&#125;)</span><br><span class="line"></span><br><span class="line">## Declare a C++ executable</span><br><span class="line">## With catkin_make all packages are built within a single CMake context</span><br><span class="line">## The recommended prefix ensures that target names across packages don&#x27;t collide</span><br><span class="line"># add_executable($&#123;PROJECT_NAME&#125;_node src/pkg_node.cpp)</span><br><span class="line"></span><br><span class="line">## Rename C++ executable without prefix</span><br><span class="line">## The above recommended prefix causes long target names, the following renames the</span><br><span class="line">## target back to the shorter version for ease of user use</span><br><span class="line">## e.g. &quot;rosrun someones_pkg node&quot; instead of &quot;rosrun someones_pkg someones_pkg_node&quot;</span><br><span class="line"># set_target_properties($&#123;PROJECT_NAME&#125;_node PROPERTIES OUTPUT_NAME node PREFIX &quot;&quot;)</span><br><span class="line"></span><br><span class="line">## Add cmake target dependencies of the executable</span><br><span class="line">## same as for the library above</span><br><span class="line"># add_dependencies($&#123;PROJECT_NAME&#125;_node $&#123;$&#123;PROJECT_NAME&#125;_EXPORTED_TARGETS&#125; $&#123;catkin_EXPORTED_TARGETS&#125;)</span><br><span class="line"></span><br><span class="line">## Specify libraries to link a library or executable target against</span><br><span class="line"># target_link_libraries($&#123;PROJECT_NAME&#125;_node</span><br><span class="line">#   $&#123;catkin_LIBRARIES&#125;</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line">## Install ##</span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line"># all install targets should use catkin DESTINATION variables</span><br><span class="line"># See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html</span><br><span class="line"></span><br><span class="line">## Mark executable scripts (Python etc.) for installation</span><br><span class="line">## in contrast to setup.py, you can choose the destination</span><br><span class="line"># catkin_install_python(PROGRAMS</span><br><span class="line">#   scripts/my_python_script</span><br><span class="line">#   DESTINATION $&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Mark executables for installation</span><br><span class="line">## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html</span><br><span class="line"># install(TARGETS $&#123;PROJECT_NAME&#125;_node</span><br><span class="line">#   RUNTIME DESTINATION $&#123;CATKIN_PACKAGE_BIN_DESTINATION&#125;</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Mark libraries for installation</span><br><span class="line">## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html</span><br><span class="line"># install(TARGETS $&#123;PROJECT_NAME&#125;</span><br><span class="line">#   ARCHIVE DESTINATION $&#123;CATKIN_PACKAGE_LIB_DESTINATION&#125;</span><br><span class="line">#   LIBRARY DESTINATION $&#123;CATKIN_PACKAGE_LIB_DESTINATION&#125;</span><br><span class="line">#   RUNTIME DESTINATION $&#123;CATKIN_GLOBAL_BIN_DESTINATION&#125;</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Mark cpp header files for installation</span><br><span class="line"># install(DIRECTORY include/$&#123;PROJECT_NAME&#125;/</span><br><span class="line">#   DESTINATION $&#123;CATKIN_PACKAGE_INCLUDE_DESTINATION&#125;</span><br><span class="line">#   FILES_MATCHING PATTERN &quot;*.h&quot;</span><br><span class="line">#   PATTERN &quot;.svn&quot; EXCLUDE</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">## Mark other files for installation (e.g. launch and bag files, etc.)</span><br><span class="line"># install(FILES</span><br><span class="line">#   # myfile1</span><br><span class="line">#   # myfile2</span><br><span class="line">#   DESTINATION $&#123;CATKIN_PACKAGE_SHARE_DESTINATION&#125;</span><br><span class="line"># )</span><br><span class="line"></span><br><span class="line">#############</span><br><span class="line">## Testing ##</span><br><span class="line">#############</span><br><span class="line"></span><br><span class="line">## Add gtest based cpp test target and link libraries</span><br><span class="line"># catkin_add_gtest($&#123;PROJECT_NAME&#125;-test test/test_pkg.cpp)</span><br><span class="line"># if(TARGET $&#123;PROJECT_NAME&#125;-test)</span><br><span class="line">#   target_link_libraries($&#123;PROJECT_NAME&#125;-test $&#123;PROJECT_NAME&#125;)</span><br><span class="line"># endif()</span><br><span class="line"></span><br><span class="line">## Add folders to be run by python nosetests</span><br><span class="line"># catkin_add_nosetests(test)</span><br></pre></td></tr></table></figure>
+<h5 id="1-指定编译选项-5"><a href="#1-指定编译选项-5" class="headerlink" title="*1. 指定编译选项 (5)"></a>*1. 指定编译选项 (5)</h5><p>这个编译选项也就是使用 gcc 或 g++ 编译器编译时的选项，一般来说是指定采用哪个标准的 C++ 进行编译。对于 ROS 的程序而言，最低需要使用 C++11 标准进行编译。（这是因为 ROS 中大部分的数据结构都是基于 C++11 中的智能指针实现的）</p>
+<h5 id="2-寻找-catkin-中的依赖包-10-15"><a href="#2-寻找-catkin-中的依赖包-10-15" class="headerlink" title="2. 寻找 catkin 中的依赖包 (10-15)"></a>2. 寻找 catkin 中的依赖包 (10-15)</h5><p>用于寻找 ROS 中指定的功能包，会自动添加 catkin_create_pkg 命令后面跟着的功能包。如果之后需要依赖其它的功能包，在这里手动添加即可。</p>
+<p>另外，如果需要添加第三方库作为依赖，只需在17行后面再添加 find_package 即可。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find_package(OpenCV REQUIRED)</span><br></pre></td></tr></table></figure>
+<p>（当然在哪里添加都可以，这么做是为了不破坏原有的结构性）</p>
+<h5 id="3-添加消息文件-50-54"><a href="#3-添加消息文件-50-54" class="headerlink" title="3. 添加消息文件(50-54)"></a>3. 添加消息文件(50-54)</h5><p>这一部分是用于添加消息文件的。使用时，取消50、51、54行注释，并添加指定的消息文件。这条命令会从 msg 文件夹中寻找对应名称的消息文件。如果没有找到，则执行编译的时候会报错。</p>
+<h5 id="4-生成消息类型-71-74"><a href="#4-生成消息类型-71-74" class="headerlink" title="4.生成消息类型 (71-74)"></a>4.生成消息类型 (71-74)</h5><p>用于生成可供调用的消息头文件，使用时取消71-74行的注释即可。</p>
+<div align=center> 
+
+**3、4 点一般是配合使用，用于自定义消息类型**
+ </div>
+
+<h5 id="5-catkin-配置-105-110"><a href="#5-catkin-配置-105-110" class="headerlink" title="*5.catkin 配置(105-110)"></a>*5.catkin 配置(105-110)</h5><p>这里一般不需要动。如果遇到编译链接问题的话，也许需要稍微改动一下。</p>
+<h5 id="6-包含目录-118-121"><a href="#6-包含目录-118-121" class="headerlink" title="*6. 包含目录 (118-121)"></a>*6. 包含目录 (118-121)</h5><p>这里一般也不需要动，在生成时已经自动配置好了</p>
+<h5 id="7-生成链接库-124-126"><a href="#7-生成链接库-124-126" class="headerlink" title="*7. 生成链接库 (124-126)"></a>*7. 生成链接库 (124-126)</h5><p>用于编译生成动态链接库。不过一般来说我们的程序最终目的是生成可执行文件，所以这里也不用改动。（但并不确定未来是否会用到，也许可能大概没准说不定会用到）</p>
+<h5 id="8-生成可执行文件-136"><a href="#8-生成可执行文件-136" class="headerlink" title="8.生成可执行文件(136)"></a>8.生成可执行文件(136)</h5><p>用于生成可执行的项目，第一个参数是生成可执行文件的名称，第二个参数是源代码文件（包括路径）。如果有多个源代码文件，需要将这些文件名（包括路径）存放在一个变量中，并以这个变量作为参数。（参考 2022 赛季源码中的 CMakeLists.txt）</p>
+<p>只有 CMakeLists.txt 中具备了这个编译选项，才会对指定的源代码文件进行编译，并生成可被执行的文件。</p>
+<h5 id="9-重命名可执行文件-142"><a href="#9-重命名可执行文件-142" class="headerlink" title="*9.重命名可执行文件 (142)"></a>*9.重命名可执行文件 (142)</h5><p>用于对生成的可执行文件重命名。可能是为了增加代码的可读性才推出这一条配置选项，一般来说在生成可执行文件时就可以直接指定可执行文件的名字了。</p>
+<h5 id="10-添加可执行文件的链接库-149-151"><a href="#10-添加可执行文件的链接库-149-151" class="headerlink" title="10.添加可执行文件的链接库 (149-151)"></a>10.添加可执行文件的链接库 (149-151)</h5><p>用于添加编译时的链接库。只要是生成可执行文件，都必须将这三行取消注释。如果依赖了第三方库，例如 OpenCV，则需要加上 ${OpenCV_LIBS} </p>
+<p>(其它的第三方链接库可能不是 LIBS 这种形式，需要查阅官方文档随机应变)</p>
+<h5 id="11-install-和-test-154"><a href="#11-install-和-test-154" class="headerlink" title="*11.install 和 test (154- )"></a>*11.install 和 test (154- )</h5><p>之后的这些是安装和测试的部分，对于我们来说暂时用不上，可忽略。</p>
+<h3 id="一-ROS安装"><a href="#一-ROS安装" class="headerlink" title="一. ROS安装"></a>一. ROS安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Ubuntu 2004中</span></span><br><span class="line">sudo sh -c &#x27;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#x27;</span><br><span class="line">sudo apt-key adv --keyserver &#x27;hkp://keyserver.ubuntu.com:80&#x27; --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install ros-noetic-desktop-full</span><br><span class="line">echo &quot;source /opt/ros/noetic/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br><span class="line">source ~/.bashrc</span><br><span class="line">sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential</span><br></pre></td></tr></table></figure>
+<p><strong>测试ROS是否安装成功（需打开三个终端依次输入以下命令）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roscore  #启动ROS核心，否则无法运行ROS相关的程序</span><br><span class="line">rosrun turtlesim turtlesim_node  #生成海龟</span><br><span class="line">rosrun turtlesim turtle_teleop_key #激活按键控制海龟的功能</span><br></pre></td></tr></table></figure>
+<ul>
+<li>若能够在终端通过方向键控制海龟，说明ROS安装成功</li>
+</ul>
+<h4 id="安装时遇到的问题汇总"><a href="#安装时遇到的问题汇总" class="headerlink" title="安装时遇到的问题汇总"></a>安装时遇到的问题汇总</h4><p>问题一：</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/ros_error1_main.jpg" width=70%>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/ros_error_1-1.jpg" width=70%>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/ros_error1-2.jpg" width=70%>
+</div>
+
+<h3 id="二-编写第一个ROS程序"><a href="#二-编写第一个ROS程序" class="headerlink" title="二 编写第一个ROS程序"></a>二 编写第一个ROS程序</h3><h4 id="2-1-创建一个工作区"><a href="#2-1-创建一个工作区" class="headerlink" title="2.1 创建一个工作区"></a>2.1 创建一个工作区</h4><p>工作区可以作为一个独立的项目进行编译，存放ROS程序的源文件、编译文件和执行文件。建立工作区的方法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/catkin_ws/src</span><br><span class="line">cd ~/catkin_ws/src</span><br><span class="line">catkin_init_workspace</span><br></pre></td></tr></table></figure>
+<p>虽然这时候工作区是空的，但是我们依然可以进行编译：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws/</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<p>这时候，会在当前文件夹下生成devel，build这两个子文件夹，在devel文件夹下能看到几个setup.*sh文件。</p>
+<p>接下来把工作区在bash中注册<br><strong>注意！！！这个操作只对当前终端有效。</strong></p>
+<p><strong>之后会涉及到多个终端执行两个程序，需要在新建的终端里重新执行以下命令</strong></p>
+<p><strong>另外，在新终端编译前也要进行此操作</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source devel/setup.bash</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-创建一个ROS工程包"><a href="#2-2-创建一个ROS工程包" class="headerlink" title="2.2 创建一个ROS工程包"></a>2.2 创建一个ROS工程包</h4><p>在一个工作区内，可能会包含多个ROS工程包。而最基本ROS工程包中会包括CmakeLists.txt和Package.xml这两个文件，其中Package.xml中主要包含本项目信息和各种依赖（depends），而CmakeLists.txt中包含了如何编译和安装代码的信息。</p>
+<p>首先切换到工作区：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws/src</span><br></pre></td></tr></table></figure>
+<p>现在可以使用catkin_create_pkg命令去创建一个叫beginner_tutorials的包，这个包依靠std_msgs、roscpp、rospy。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_create_pkg beginner_tutorials std_msgs rospy roscpp</span><br></pre></td></tr></table></figure>
+<p>接下来在工作区编译这个工程包。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-一个简单的发布、订阅程序"><a href="#2-3-一个简单的发布、订阅程序" class="headerlink" title="2.3.一个简单的发布、订阅程序"></a>2.3.一个简单的发布、订阅程序</h4><h5 id="2-3-1-写一个发布（Publisher）节点"><a href="#2-3-1-写一个发布（Publisher）节点" class="headerlink" title="2.3.1 写一个发布（Publisher）节点"></a>2.3.1 写一个发布（Publisher）节点</h5><p>节点（node）是连接到ROS网络中可执行的基本单元。我们在这创建一个发布者—-“talker”节点，这个节点持续对外发布消息。</p>
+<p>首先我们要把目录切换到我们的beginner_tutorials工程包中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws/src/beginner_tutorials</span><br></pre></td></tr></table></figure>
+<p>因为我们已经编译过这个工程包了，所以会在beginner_tutorials文件夹下看到CmakeList.txt、package.xml文件和include、src这两个目录。接下来进入src子目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src</span><br></pre></td></tr></table></figure>
+<p>在src目录中创建一个talker.cpp文件，里面的内容如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ros/ros.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;std_msgs/String.h&quot;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * The ros::init() function needs to see argc and argv so that it can perform</span></span><br><span class="line"><span class="comment">   * any ROS arguments and name remapping that were provided at the command line. For programmatic</span></span><br><span class="line"><span class="comment">   * remappings you can use a different version of init() which takes remappings</span></span><br><span class="line"><span class="comment">   * directly, but for most command-line programs, passing argc and argv is the easiest</span></span><br><span class="line"><span class="comment">   * way to do it.  The third argument to init() is the name of the node.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * You must call one of the versions of ros::init() before using any other</span></span><br><span class="line"><span class="comment">   * part of the ROS system.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;talker&quot;</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * NodeHandle is the main access point to communications with the ROS system.</span></span><br><span class="line"><span class="comment">   * The first NodeHandle constructed will fully initialize this node, and the last</span></span><br><span class="line"><span class="comment">   * NodeHandle destructed will close down the node.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::NodeHandle n;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * The advertise() function is how you tell ROS that you want to</span></span><br><span class="line"><span class="comment">   * publish on a given topic name. This invokes a call to the ROS</span></span><br><span class="line"><span class="comment">   * master node, which keeps a registry of who is publishing and who</span></span><br><span class="line"><span class="comment">   * is subscribing. After this advertise() call is made, the master</span></span><br><span class="line"><span class="comment">   * node will notify anyone who is trying to subscribe to this topic name,</span></span><br><span class="line"><span class="comment">   * and they will in turn negotiate a peer-to-peer connection with this</span></span><br><span class="line"><span class="comment">   * node.  advertise() returns a Publisher object which allows you to</span></span><br><span class="line"><span class="comment">   * publish messages on that topic through a call to publish().  Once</span></span><br><span class="line"><span class="comment">   * all copies of the returned Publisher object are destroyed, the topic</span></span><br><span class="line"><span class="comment">   * will be automatically unadvertised.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * The second parameter to advertise() is the size of the message queue</span></span><br><span class="line"><span class="comment">   * used for publishing messages.  If messages are published more quickly</span></span><br><span class="line"><span class="comment">   * than we can send them, the number here specifies how many messages to</span></span><br><span class="line"><span class="comment">   * buffer up before throwing some away.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::Publisher chatter_pub = n.<span class="built_in">advertise</span>&lt;std_msgs::String&gt;(<span class="string">&quot;chatter&quot;</span>, <span class="number">1000</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="function">ros::Rate <span class="title">loop_rate</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * A count of how many messages we have sent. This is used to create</span></span><br><span class="line"><span class="comment">   * a unique string for each message.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (ros::<span class="built_in">ok</span>())</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * This is a message object. You stuff it with data, and then publish it.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    std_msgs::String msg;</span><br><span class="line"> </span><br><span class="line">    std::stringstream ss;</span><br><span class="line">    ss &lt;&lt; <span class="string">&quot;hello world &quot;</span> &lt;&lt; count;</span><br><span class="line">    msg.data = ss.<span class="built_in">str</span>();</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;%s&quot;</span>, msg.data.<span class="built_in">c_str</span>());</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The publish() function is how you send messages. The parameter</span></span><br><span class="line"><span class="comment">     * is the message object. The type of this object must agree with the type</span></span><br><span class="line"><span class="comment">     * given as a template parameter to the advertise&lt;&gt;() call, as was done</span></span><br><span class="line"><span class="comment">     * in the constructor above.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    chatter_pub.<span class="built_in">publish</span>(msg);</span><br><span class="line"> </span><br><span class="line">    ros::<span class="built_in">spinOnce</span>();</span><br><span class="line"> </span><br><span class="line">    loop_rate.<span class="built_in">sleep</span>();</span><br><span class="line">    ++count;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-3-2-写一个订阅（监听）节点"><a href="#2-3-2-写一个订阅（监听）节点" class="headerlink" title="2.3.2 写一个订阅（监听）节点"></a>2.3.2 写一个订阅（监听）节点</h5><p>还是在src目录下，创建一个listener.cpp文件。内容如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ros/ros.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;std_msgs/String.h&quot;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This tutorial demonstrates simple receipt of messages over the ROS system.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">chatterCallback</span><span class="params">(<span class="type">const</span> std_msgs::String::ConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">ROS_INFO</span>(<span class="string">&quot;I heard: [%s]&quot;</span>, msg-&gt;data.<span class="built_in">c_str</span>());</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * The ros::init() function needs to see argc and argv so that it can perform</span></span><br><span class="line"><span class="comment">   * any ROS arguments and name remapping that were provided at the command line. For programmatic</span></span><br><span class="line"><span class="comment">   * remappings you can use a different version of init() which takes remappings</span></span><br><span class="line"><span class="comment">   * directly, but for most command-line programs, passing argc and argv is the easiest</span></span><br><span class="line"><span class="comment">   * way to do it.  The third argument to init() is the name of the node.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * You must call one of the versions of ros::init() before using any other</span></span><br><span class="line"><span class="comment">   * part of the ROS system.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::<span class="built_in">init</span>(argc, argv, <span class="string">&quot;listener&quot;</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * NodeHandle is the main access point to communications with the ROS system.</span></span><br><span class="line"><span class="comment">   * The first NodeHandle constructed will fully initialize this node, and the last</span></span><br><span class="line"><span class="comment">   * NodeHandle destructed will close down the node.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::NodeHandle n;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * The subscribe() call is how you tell ROS that you want to receive messages</span></span><br><span class="line"><span class="comment">   * on a given topic.  This invokes a call to the ROS</span></span><br><span class="line"><span class="comment">   * master node, which keeps a registry of who is publishing and who</span></span><br><span class="line"><span class="comment">   * is subscribing.  Messages are passed to a callback function, here</span></span><br><span class="line"><span class="comment">   * called chatterCallback.  subscribe() returns a Subscriber object that you</span></span><br><span class="line"><span class="comment">   * must hold on to until you want to unsubscribe.  When all copies of the Subscriber</span></span><br><span class="line"><span class="comment">   * object go out of scope, this callback will automatically be unsubscribed from</span></span><br><span class="line"><span class="comment">   * this topic.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * The second parameter to the subscribe() function is the size of the message</span></span><br><span class="line"><span class="comment">   * queue.  If messages are arriving faster than they are being processed, this</span></span><br><span class="line"><span class="comment">   * is the number of messages that will be buffered up before beginning to throw</span></span><br><span class="line"><span class="comment">   * away the oldest ones.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::Subscriber sub = n.<span class="built_in">subscribe</span>(<span class="string">&quot;chatter&quot;</span>, <span class="number">1000</span>, chatterCallback);</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * ros::spin() will enter a loop, pumping callbacks.  With this version, all</span></span><br><span class="line"><span class="comment">   * callbacks will be called from within this thread (the main one).  ros::spin()</span></span><br><span class="line"><span class="comment">   * will exit when Ctrl-C is pressed, or the node is shutdown by the master.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  ros::<span class="built_in">spin</span>();</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-3-3-编译创建的节点"><a href="#2-3-3-编译创建的节点" class="headerlink" title="2.3.3 编译创建的节点"></a>2.3.3 编译创建的节点</h5><p>在编译我们创建的节点之前，我们还需要编辑Cmakelist.txt文件（<strong>注意：是beginner_tutorials项目包下的CMakelist文件</strong>），告诉编辑器我们需要编辑什么文件，需要什么依赖。</p>
+<p>在文件末尾添加如下语句：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">include_directories(include $&#123;catkin_INCLUDE_DIRS&#125;)</span><br><span class="line"></span><br><span class="line">add_executable(talker src/talker.cpp)</span><br><span class="line">target_link_libraries(talker $&#123;catkin_LIBRARIES&#125;)</span><br><span class="line">add_dependencies(talker $&#123;PROJECT_NAME&#125;_generate_messages_cpp)</span><br><span class="line"></span><br><span class="line">add_executable(listener src/listener.cpp)</span><br><span class="line">target_link_libraries(listener $&#123;catkin_LIBRARIES&#125;)</span><br><span class="line">add_dependencies(listener $&#123;PROJECT_NAME&#125;_generate_messages_cpp)</span><br></pre></td></tr></table></figure>
+<p>将目录切换到工作区目录，并执行catkin_make运行命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<p>在这里，可能会出现如下错误：</p>
+<font color=Cyan>**2022.8.16更新：实际上这个错误应该不影响，只需要再执行一次 catkin_make 即可**</font>
+
+<blockquote>
+<p>CMake Error at turotials/CMakeLists.txt:213 (add_dependencies):<br>  The dependency target “turotials_generate_messages_cpp” of target “talker”<br>  does not exist.</p>
+<p>CMake Error at turotials/CMakeLists.txt:217 (add_dependencies):<br>  The dependency target “turotials_generate_messages_cpp” of target<br>  “listener” does not exist.</p>
+</blockquote>
+<p>此时需要修改CMakeLists.txt 105-110 行代码，取消两个地方的注释，如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">catkin_package(</span><br><span class="line"> INCLUDE_DIRS include</span><br><span class="line">#  LIBRARIES turotials</span><br><span class="line"> CATKIN_DEPENDS roscpp rospy std_msgs</span><br><span class="line">#  DEPENDS system_lib</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>并在上面添加的add_dependencies后面再加上${catkin_EXPORTED_TARGETS}，如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add_dependencies(talker $&#123;PROJECT_NAME&#125;_tutorials_generate_messages_cpp $&#123;catkin_EXPORTED_TARGETS&#125;)</span><br><span class="line">add_dependencies(listener $&#123;PROJECT_NAME&#125;_tutorials_generate_messages_cpp $&#123;catkin_EXPORTED_TARGETS&#125;)</span><br></pre></td></tr></table></figure>
+<p>之后编译时，需要改用以下命令进行编译</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make --pkg beginner_tutorials #这里的beginner_tutorials是工程的名字</span><br></pre></td></tr></table></figure>
+<h4 id="执行程序"><a href="#执行程序" class="headerlink" title="执行程序"></a>执行程序</h4><p>首先，我们得要启动ROS核心程序roscore（在单独的终端进行）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roscore</span><br></pre></td></tr></table></figure>
+<p>在使用我们的程序之前，需要先把程序注册</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/catkin_ws</span><br><span class="line">source ./devel/setup.bash</span><br></pre></td></tr></table></figure>
+<p>运行talker节点：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosrun beginner_tutorials talker </span><br></pre></td></tr></table></figure>
+<p>这时候会看到如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[INFO] [WallTime: 1314931831.774057] hello world 1314931831.77</span><br><span class="line">[INFO] [WallTime: 1314931832.775497] hello world 1314931832.77</span><br><span class="line">[INFO] [WallTime: 1314931833.778937] hello world 1314931833.78</span><br><span class="line">[INFO] [WallTime: 1314931834.782059] hello world 1314931834.78</span><br><span class="line">[INFO] [WallTime: 1314931835.784853] hello world 1314931835.78</span><br><span class="line">[INFO] [WallTime: 1314931836.788106] hello world 1314931836.79</span><br></pre></td></tr></table></figure>
+<p>这就表示发布（Publisher）节点已经正确的运行了。</p>
+<p>接下来在新的终端运行listener节点（注意需要再source一次）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosrun beginner_tutorials listener</span><br></pre></td></tr></table></figure>
+<p>这时候会看到如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[INFO] [WallTime: 1314931969.258941] /listener_17657_1314931968795I heard hello world 1314931969.26</span><br><span class="line">[INFO] [WallTime: 1314931970.262246] /listener_17657_1314931968795I heard hello world 1314931970.26</span><br><span class="line">[INFO] [WallTime: 1314931971.266348] /listener_17657_1314931968795I heard hello world 1314931971.26</span><br><span class="line">[INFO] [WallTime: 1314931972.270429] /listener_17657_1314931968795I heard hello world 1314931972.27</span><br><span class="line">[INFO] [WallTime: 1314931973.274382] /listener_17657_1314931968795I heard hello world 1314931973.27</span><br><span class="line">[INFO] [WallTime: 1314931974.277694] /listener_17657_1314931968795I heard hello world 1314931974.28</span><br><span class="line">[INFO] [WallTime: 1314931975.283708] /listener_17657_1314931968795I heard hello world 1314931975.28</span><br></pre></td></tr></table></figure>
+<p>这说明订阅节点（listener）已经成功的接收到了发布节点（talker）发布的信息。至此，整个程序结束！</p>
+<h3 id="三-上述示例程序中的源码解析"><a href="#三-上述示例程序中的源码解析" class="headerlink" title="三 上述示例程序中的源码解析"></a>三 上述示例程序中的源码解析</h3><p>编程绝不可浅尝辄止。在参考教程复现出功能之后，也一定要自己独立思考，把整个程序的执行流程吃透了，才算把教程的东西变成自己的。接下来我会对上述的程序进行解析，虽然不难，但是其中蕴含的东西，足够让初学者花几小时时间好好体会并消化了。希望在之后的实战程序中，读者也能够按照这种方式独立思考，相信一定会有收获的。</p>
+<h4 id="3-1-ros-init-初始化函数"><a href="#3-1-ros-init-初始化函数" class="headerlink" title="3.1 ros::init() 初始化函数"></a>3.1 ros::init() 初始化函数</h4><p>该函数的作用是初始化ros节点，也可以理解为建立新节点</p>
+<p><strong>传入参数为</strong> </p>
+<ul>
+<li>argc：remapping参数的个数</li>
+<li>argv：remapping参数的列表</li>
+<li>name：节点名，必须是一个基本名称，不能包含命名空间</li>
+<li>options：[可选]用于启动节点的选项（ros::init_options中的一组位标志）</li>
+</ul>
+<p><strong>最常用的方式</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros::<span class="built_in">init</span>(argc,argv,<span class="string">&quot;node_name&quot;</span>);<span class="comment">//node_name为用户自定义的节点名</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-2-ros-NodeHandle类-（直译为节点句柄）"><a href="#3-2-ros-NodeHandle类-（直译为节点句柄）" class="headerlink" title="3.2 ros::NodeHandle类 （直译为节点句柄）"></a>3.2 ros::NodeHandle类 （直译为节点句柄）</h4><blockquote>
+<p>NodeHandle is the main access point to communications with the ROS system.<br> The first NodeHandle constructed will fully initialize this node, and the last NodeHandle destructed will close down the node.</p>
+</blockquote>
+<p>这段话翻译过来，意思大概是：NodeHandle类是ROS系统中主要的通信手段。在一段代码（准确点来说是一个节点）中可能会声明多个NodeHandle类，在构造第一个NodeHandle对象时会完全初始化这个节点，在析构最后一个NodeHandle对象时会关闭这个节点。</p>
+<p>我们可以先看看NodeHandle类的主要成员函数及其作用</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">用法</th>
+<th style="text-align:center">用法解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">advertise</td>
+<td style="text-align:center">发布话题</td>
+<td style="text-align:center">obj.advertise<msg_type>  (“topic_name”,queue_size)</td>
+<td style="text-align:center">· 该函数的返回值为ros::Publisher，即发布者对象 <br>· 用法中msg_type为消息类型、topic_name为话题名 <br>· queue_size为缓冲区大小，即最多可以容纳的未被接收的消息数 <br>· 具体用法参考上述talker.cpp源码以及注释</td>
+</tr>
+<tr>
+<td style="text-align:center">subscribe</td>
+<td style="text-align:center">订阅话题 （也可以把订阅理解为监听）</td>
+<td style="text-align:center">subscribe  (topic_name,queue_size,*func）</td>
+<td style="text-align:center">· 该函数的返回值为ros::Subscriber，即订阅者对象 <br>· topic_name，queue_size作用同上 <br>· *func 为回调函数<sup>[注]</sup>，在每次成功接收后都会调用一次回调函数，用于对接收到的消息的处理，也可以进行其它操作 <br>· 回调函数要求返回值为void，入口参数为消息类型  <br>· 具体用法参考上述listener.cpp源码以及注释</td>
+</tr>
+<tr>
+<td style="text-align:center">advertiseServer</td>
+<td style="text-align:center">发布服务</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">· 返回值为ros::ServiceServer</td>
+</tr>
+<tr>
+<td style="text-align:center">serviceClient</td>
+<td style="text-align:center">客户端调用服务</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">· 返回值为ros::ServiceClient</td>
+</tr>
+<tr>
+<td style="text-align:center">createTimer</td>
+<td style="text-align:center">创建定时器，按一定周期执行指定的函数</td>
+<td style="text-align:center">createTimer (period,*fun)</td>
+<td style="text-align:center">period为周期，*fun为回调函数指针</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<font size=2>*[注]：回调函数 (Call-back Function) 指的是该函数本身能够被其它函数调用，也就是说该函数的函数名可以作为另一个函数的入口参数。读者可以阅读 listener.cpp 代码体会一下*</font>
+
+</blockquote>
+<p>其中，客户端和服务的关系就类似与发布者和订阅者的关系，只不过前者靠话题（topic）通讯，后者靠服务（service）通讯（个人理解，毕竟我也暂时还没学到这一块）。感兴趣的话也可以自行了解，日后有时间我也会补充完整。</p>
+<p>关于createTimer，目前还没使用过，也留给日后进行补充吧。</p>
+<h4 id="3-3-ros-Publisher-publish-发布者发布消息"><a href="#3-3-ros-Publisher-publish-发布者发布消息" class="headerlink" title="3.3 ros::Publisher::publish() 发布者发布消息"></a>3.3 ros::Publisher::publish() 发布者发布消息</h4><blockquote>
+<p>The publish() function is how you send messages. The parameter<br>    is the message object. The type of this object must agree with the type<br>    given as a template parameter to the advertise&lt;&gt;() call, as was done<br>    in the constructor above.</p>
+</blockquote>
+<p>翻译一下：publish这个函数是发送消息的手段，入口参数是消息对象，并且这个对象类型要和在之前完成构造时，调用advertise&lt;&gt;()函数时给定的模板类型一致。</p>
+<p>这里的advertise即之前讲到了NodeHandle中的成员函数。</p>
+<font size=2>**注：发布者发布消息时调用这个函数，而订阅者并没有专门用于接收消息的函数。这是因为订阅者对象在构造完成之后，便可以通过ros::spin()(这个函数后面会讲到)持续对该话题进行监听。至于如何判断发布者是否发布了消息，我们之前讲过。实在想不起来就重新看一遍NodeHandler类的讲解吧**</font>
+
+<p><strong>入口参数</strong></p>
+<ul>
+<li>msg_type：消息类型。这些类型可以是ROS消息所使用的标准数据类型，也可以是用户自定义的数据类型。<br>（关于自定义数据类型消息后面会讲到，并且在实际项目中也更常用到）</li>
+</ul>
+<h4 id="3-4-ros-Rate"><a href="#3-4-ros-Rate" class="headerlink" title="3.4 ros::Rate"></a>3.4 ros::Rate</h4><blockquote>
+<p>ros::Rate loop（50）规定了循环的频率50Hz，这个频率是指运行上一次loop.sleep()到下一次loop.sleep()之间保持的时间，通常情况下，代码运行速度比设定的频率要快，所以如果运行到下一次loop.sleep()后未达到0.02s（1/50Hz），则会开始休眠，等到0.02s后再执行下一句程序。</p>
+</blockquote>
+<p>这个很好理解，看代码 talker.cpp 体会。</p>
+<h4 id="3-5-ros-spin-和-ros-spinOnce"><a href="#3-5-ros-spin-和-ros-spinOnce" class="headerlink" title="3.5 ros::spin() 和 ros::spinOnce()"></a>3.5 ros::spin() 和 ros::spinOnce()</h4><blockquote>
+<p>ros::spin() will enter a loop, pumping callbacks.  With this version, all<br>  callbacks will be called from within this thread (the main one).  ros::spin()<br>  will exit when Ctrl-C is pressed, or the node is shutdown by the master.</p>
+</blockquote>
+<p>这个用文字解释起来比较复杂。简单来说，spin()主要负责监听节点中的回调函数和对应的消息。当有消息到来时，就会执行对应的回调函数里面的内容。（底层原理我也没搞懂，不过确实是实现这么一个功能）</p>
+<p>最后一段话翻译过来是说ros::spin()会在按下Ctrl-C时退出，也就是说任何程序在执行到ros::spin()时都会阻塞住，并且持续进行监听。因此，之后的代码都不会被执行。</p>
+<p>ros::spinOnce()实现的功能和ros::spin()是相同的，不同点在于ros::spinOnce()是非阻塞的，执行一次之后就开始执行下一句了，一般会写在 while(ros::ok()) 中。</p>
+<p>可以对比 listener.cpp 和 talker.cpp 中的代码进行体会。</p>
+<p>注：虽然 talker.cpp 里面的 ros::spinOnce() 没起作用，但随手写一个也算是好的习惯。因为在之后的实际编程中，可能一个节点既是发布者，也是订阅者，此时该函数就会起到作用了。另外，这个函数也可以表示一段循环体的结束，可以提高代码的可读性。</p>
+<h4 id="3-6-ROS-INFO"><a href="#3-6-ROS-INFO" class="headerlink" title="3.6 ROS_INFO"></a>3.6 ROS_INFO</h4><p>这是一个ROS中的宏，其调用规则与C语言的printf()函数基本上一样，区别在于输出的时候ROS_INFO会输出更多的信息。这点可在代码中体会。</p>
+<h4 id="3-7-整体运行流程图"><a href="#3-7-整体运行流程图" class="headerlink" title="3.7 整体运行流程图"></a>3.7 整体运行流程图</h4><p>经过前边的对各个函数的解析，读者可以参考以下程序流程图，加深对程序的理解，并体会ROS的工作原理。</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/3.7-workflow.png" width="70%">
+</div>
+
+<h3 id="实战1：自定义消息类型基础"><a href="#实战1：自定义消息类型基础" class="headerlink" title="实战1：自定义消息类型基础"></a>实战1：自定义消息类型基础</h3><p><strong><font size=4 color=RED>任务：自定义一个消息类型，并基于该消息类型在不同节点间实现消息传递。</font></strong></p>
+<p>在开始编程之前，我们需要解决以下几个问题：</p>
+<ul>
+<li>自定义消息类型需要ROS提供哪些功能包</li>
+<li>我们应如何声明自定义消息类型才能让ROS系统识别出来</li>
+<li>我们的程序应如何调用自定义消息类型</li>
+</ul>
+<h4 id="1-自定义消息类型需要ROS提供哪些功能包"><a href="#1-自定义消息类型需要ROS提供哪些功能包" class="headerlink" title="1.自定义消息类型需要ROS提供哪些功能包"></a>1.自定义消息类型需要ROS提供哪些功能包</h4><ul>
+<li>std_msgs：显然，自定义消息类型是基于标准消息类型的，因此这个包必须是要有的</li>
+<li>message_generation：用于生成消息类型的包</li>
+<li>roscpp、rospy：使得生成的消息类型能够被C++和Python调用</li>
+</ul>
+<h4 id="2、我们应如何声明自定义消息类型才能让ROS系统识别出来"><a href="#2、我们应如何声明自定义消息类型才能让ROS系统识别出来" class="headerlink" title="2、我们应如何声明自定义消息类型才能让ROS系统识别出来"></a>2、我们应如何声明自定义消息类型才能让ROS系统识别出来</h4><p>声明自定义消息类型需要符合ROS自定义消息的格式规范和语法规范，只有这样才能被ROS所识别</p>
+<p>ROS中的自定义消息类型文件需放在功能包的msg文件夹下，并以.msg作为文件后缀。之后在CMakeLists.txt中进行一些配置，即可被ROS识别。</p>
+<h4 id="3、我们的程序应如何调用自定义消息类型"><a href="#3、我们的程序应如何调用自定义消息类型" class="headerlink" title="3、我们的程序应如何调用自定义消息类型"></a>3、我们的程序应如何调用自定义消息类型</h4><p>在进行完第2步的配置后，回到最高级目录下编译，编译成功后便会在devel文件夹下生成供C++和Python调用的头文件</p>
+<p>之后在功能包中添加这个自定义消息依赖（名称为该自定义消息类型的功能包名称），便可在该功能包中使用相应的消息类型了。</p>
+<p>此时一定注意，若在程序中要使用该消息类型，一定要<strong>确保包含的是devel文件夹下相应的头文件</strong>。包含其它的头文件在调用时会报错。</p>
+<p>在该头文件中，对于C++调用而言，该消息类型的命名空间名为其功能包的名称，类型名为.msg文件名称。这点在接下来的实战中会有所体会。<br>（注：Python调用不是本节讨论的内容，我们会在后续的实战项目进行了解）</p>
+<h4 id="编程实战"><a href="#编程实战" class="headerlink" title="编程实战"></a>编程实战</h4><h5 id="1-创建工作空间"><a href="#1-创建工作空间" class="headerlink" title="1.创建工作空间"></a>1.创建工作空间</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> sample_1</span><br><span class="line"><span class="built_in">cd</span> sample_1</span><br><span class="line"><span class="built_in">mkdir</span> src</span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">catkin_init_workspace</span><br></pre></td></tr></table></figure>
+<h5 id="2-创建自定义数据类型的功能包"><a href="#2-创建自定义数据类型的功能包" class="headerlink" title="2. 创建自定义数据类型的功能包"></a>2. 创建自定义数据类型的功能包</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确保当前在sample_1/src下</span></span><br><span class="line"><span class="comment"># 此处直接通过命令添加依赖，为了之后修改CMakeLists.txt和package.xml更方便</span></span><br><span class="line">catkin_create_pkg fyt_msg_t roscpp rospy message_generation std_msgs</span><br></pre></td></tr></table></figure>
+<h5 id="3-（选）回到主目录，编译"><a href="#3-（选）回到主目录，编译" class="headerlink" title="3. （选）回到主目录，编译"></a>3. （选）回到主目录，编译</h5><p><strong>此处是为了创建build和devel两个文件夹，让项目的文件结构好看一些。当然，如果你没有强迫症，可以无视这一步，在需要编译的时候编译即可</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..  <span class="comment"># 回到sample_1目录下</span></span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<h5 id="4-创建msg文件夹和文件"><a href="#4-创建msg文件夹和文件" class="headerlink" title="4. 创建msg文件夹和文件"></a>4. 创建msg文件夹和文件</h5><p>在 fyt_msg_t 文件夹下创建 msg 文件夹，并在其中创建DworryMsg.msg文件，进行以下编辑并保存</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string name</span><br><span class="line">int8 age</span><br></pre></td></tr></table></figure>
+<h5 id="5-配置CMakeLists-txt，生成相应头文件"><a href="#5-配置CMakeLists-txt，生成相应头文件" class="headerlink" title="5. 配置CMakeLists.txt，生成相应头文件"></a>5. 配置CMakeLists.txt，生成相应头文件</h5><p>打开 fyt_msg_t 文件夹下的CMakeLists.txt，进行以下修改。</p>
+<ul>
+<li>将第51-55行内容改成以下形式</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">add_message_files(</span><br><span class="line">  FILES</span><br><span class="line">  DworryMsg.msg</span><br><span class="line">#   Message2.msg</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将72-75行取消注释</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">generate_messages(</span><br><span class="line">  DEPENDENCIES</span><br><span class="line">  std_msgs</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>编译，成功后可在devel/include中看到对应的C++头文件</p>
+<h5 id="6-创建talker和listener功能包"><a href="#6-创建talker和listener功能包" class="headerlink" title="6.创建talker和listener功能包"></a>6.创建talker和listener功能包</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> src <span class="comment">#进入src文件夹</span></span><br><span class="line">catkin_create_pkg talker roscpp std_msgs fyt_msg_t</span><br><span class="line">catkin_create_pkg listener roscpp std_msgs fyt_msg_t</span><br></pre></td></tr></table></figure>
+<p>分别进入两个功能包的src文件夹下，创建talker.cpp和listener.cpp，进行以下编辑</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//talker.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;fyt_msg_t/DworryMsg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ros/ros.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span>&#123;</span><br><span class="line">    ros::<span class="built_in">init</span>(argc,argv,<span class="string">&quot;talker_node&quot;</span>);</span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line">    ros::Publisher pub=n.<span class="built_in">advertise</span>&lt;<span class="type">fyt_msg_t</span>::DworryMsg&gt;(<span class="string">&quot;sample_1&quot;</span>,<span class="number">10</span>);</span><br><span class="line">    <span class="function">ros::Rate <span class="title">loop_rate</span><span class="params">(<span class="number">20</span>)</span></span>;</span><br><span class="line">    <span class="type">fyt_msg_t</span>::DworryMsg msg;</span><br><span class="line">    <span class="keyword">while</span>(ros::<span class="built_in">ok</span>())&#123;</span><br><span class="line">        msg.name=<span class="string">&quot;Dworry&quot;</span>;</span><br><span class="line">        msg.age=<span class="number">3</span>;</span><br><span class="line">        pub.<span class="built_in">publish</span>(msg);</span><br><span class="line">        <span class="built_in">ROS_INFO</span>(<span class="string">&quot;I&#x27;m %s, and I&#x27;m %d years old&quot;</span>,msg.name.<span class="built_in">c_str</span>(),msg.age);</span><br><span class="line">        ros::<span class="built_in">spinOnce</span>();</span><br><span class="line">        loop_rate.<span class="built_in">sleep</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//listener.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;fyt_msg_t/DworryMsg.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros/ros.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">callback</span><span class="params">(<span class="type">const</span> <span class="type">fyt_msg_t</span>::DworryMsgConstPtr &amp;msg)</span></span>&#123;</span><br><span class="line">    <span class="built_in">ROS_INFO</span>(<span class="string">&quot;I known, your name is %s, you are %d years old&quot;</span>,msg-&gt;name.<span class="built_in">c_str</span>(),msg-&gt;age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span>&#123;</span><br><span class="line">    ros::<span class="built_in">init</span>(argc,argv,<span class="string">&quot;listener_node&quot;</span>);</span><br><span class="line">    ros::NodeHandle n;</span><br><span class="line">    ros::Subscriber sub=n.<span class="built_in">subscribe</span>(<span class="string">&quot;sample_1&quot;</span>,<span class="number">5</span>,callback);</span><br><span class="line">    ros::<span class="built_in">spin</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//Aha, this will never happen</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="7-配置、编译、运行"><a href="#7-配置、编译、运行" class="headerlink" title="7. 配置、编译、运行"></a>7. 配置、编译、运行</h5><ul>
+<li>在talker功能包中的CMakeLists.txt末尾添加以下内容</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add_executable(talker src/talker.cpp)</span><br><span class="line">target_link_libraries(talker $&#123;catkin_LIBRARIES&#125;)</span><br><span class="line"># add_dependencies(talker $&#123;PROJECT_NAME&#125;_generate_messages_cpp)</span><br><span class="line"># 注释掉add_dependencies就不会报does not exist这个错误，但暂时没看出有什么影响</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在listener功能包中的CMakeLists.txt末尾添加以下内容</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_executable(listener src/listener.cpp)</span><br><span class="line">target_link_libraries(listener $&#123;catkin_LIBRARIES&#125;)</span><br><span class="line"># add_dependencies(listener $&#123;PROJECT_NAME&#125;_generate_messages_cpp)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编译</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+<ul>
+<li>运行</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun talker talker</span><br></pre></td></tr></table></figure>
+<p>会看到如下输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ INFO] [1660900453.169758246]: I&#x27;m Dworry, and I&#x27;m 3 years old</span><br><span class="line">[ INFO] [1660900453.219729039]: I&#x27;m Dworry, and I&#x27;m 3 years old</span><br><span class="line">[ INFO] [1660900453.269727186]: I&#x27;m Dworry, and I&#x27;m 3 years old</span><br><span class="line">[ INFO] [1660900453.319718240]: I&#x27;m Dworry, and I&#x27;m 3 years old</span><br></pre></td></tr></table></figure>
+<p>同时，在新终端运行listener程序</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun listener listener</span><br></pre></td></tr></table></figure>
+<p>会看到如下输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[ INFO] [1660900453.170097656]: I known, your name is Dworry, you are 3 years old</span><br><span class="line">[ INFO] [1660900453.220118809]: I known, your name is Dworry, you are 3 years old</span><br><span class="line">[ INFO] [1660900453.270109795]: I known, your name is Dworry, you are 3 years old</span><br><span class="line">[ INFO] [1660900453.320089636]: I known, your name is Dworry, you are 3 years old</span><br></pre></td></tr></table></figure>
+<p>至此，整个程序结束。</p>
+<p>程序源代码放在sample_1文件夹中，可供参考学习</p>
+<font color=blue>注 (2022.8.24补充)：在删除了 build 和 devel 之后重新编译时，需要先对自定义消息的功能包进行单独编译，之后在进行整体编译。否则有可能由于可执行程序功能包在自定义消息功能包之前编译，导致找不到头文件而出现编译错误。
+
+对于这个程序，编译步骤如下：
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">catkin_make --pkg fyt_msg</span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure>
+
+**2022-11-12 upd** 上述命令存在不完美的地方，即使指定了功能包，但还是会扫描所有的功能包。所以可能会存在编译失败的情况。
+
+可替换成以下命令：
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="string">&quot;fyt_msg&quot;</span> <span class="comment"># 先单独编译这个包</span></span><br><span class="line">catkin_make -DCATKIN_WHITELIST_PACKAGES=<span class="string">&quot;&quot;</span> <span class="comment"># 再编译剩下的所有包</span></span><br></pre></td></tr></table></figure>
+
+之后只要是涉及到自定义消息类型的程序，在移植到其它电脑上编译部署时，也是如此操作。
+
+</font>
+
+<h3 id="实战2：两个窗口间实现半双工通信"><a href="#实战2：两个窗口间实现半双工通信" class="headerlink" title="实战2：两个窗口间实现半双工通信"></a>实战2：两个窗口间实现半双工通信</h3><font size=4 color=red>
+任务：通过 ROS 的消息机制，创建两个进程，使这两个进程间可以实现半双工通信。
+</font>
+
+<blockquote>
+<p>半双工通信：双方的信息传递可以是双向的，但同一时刻只能有一方发送信息，另一方只能接收。例如对讲机。</p>
+</blockquote>
+<h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>实现半双工通信，可以有以下两种实现方法。</p>
+<p>方法一：建立两个话题，进程1在第一个话题上发消息，接收第二个话题的消息；进程2在第二个话题上发消息，接收第一个话题的消息。如下图：</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/shizhan3_m1.png" width="70%">
+</div>
+
+<p>这种方法是最直接最简单的，如果进一步加上多线程，可以实现全双工通信。但是对于半双工通信来说，这显然不是最佳的选择。因为当进程多起来后，话题的数量也要相应地增加，每个进程需要监听的话题也要更多。也就是说每计划增加一个进程，都需要对已有的代码进行修改，并且代码之间是不可复用的，会非常的麻烦。</p>
+<p>方法二、只建立一个话题，所有进程通信都使用这个话题。</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/shizhan3_m2.png" width="70%">
+</div>
+
+<p>这种方式就可以大大减少了编程的复杂程度。但是采用这种方法仍需解决两个问题：如何避免收到自己发出的消息？如何确保每一时刻只有一个进程发布消息？</p>
+<p>第一个问题很好解决，我们只需要在消息中加入发布者信息，然后在接收时判断这个消息是不是自己发出去的即可。此时需要用到自定义消息类型。</p>
+<p>第二个问题，可以采用信号量机制来解决（操作系统原理中会学习）。但是在进程间使用信号量又十分困难，解决方法仍然是话题-消息机制。我们可以再声明一个话题，用来表示当前信道是否有进程占用。如下图：</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/shili3_m2e.png" width="70%">
+</div>
+
+<p>每个进程在通信前，都会检查一下当前是否有进程正在通信。如果有的话，则本次通信只接收不发送；如果没有的话，则先<strong>发布正在通信的状态消息</strong>，之后<strong>发布正式通信的消息</strong>。通信结束后，会再次<strong>发布通信结束的状态消息</strong>。</p>
+<p>观察示意图会发现，这种方法跟第一种方法好像没有什么区别。这是因为我们只是举进程数为2的例子。当进程数量大于2个的时候，第一种方法就需要创建更多的话题，而第二种方法则可以继续用两个话题胜任这项任务。</p>
+<p>通过对这个实例的理解，读者也可以发现，消息机制主要解决的是进程之间的通信问题。这也正是我们这个赛季使用 ROS 的初衷。</p>
+<h4 id="编程实战-1"><a href="#编程实战-1" class="headerlink" title="编程实战"></a>编程实战</h4><p>首先还是创建工作区，创建功能包，配置等。跟之前是一样的，这里就不再赘述了。</p>
+<p>另外，我们仍然需要自定义消息类型，创建 msg 文件夹，编辑 ChatMsg.msg 文件如下</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string publisher_name <span class="comment">#发布者节点名</span></span><br><span class="line">string message_str <span class="comment">#消息内容</span></span><br></pre></td></tr></table></figure>
+<p>之后在src文件夹下创建 .cpp 文件，开始写代码。需要注意并了解以下几点：</p>
+<ol>
+<li>由于我们的目的是设计可复用的程序，因此我们需要利用外部参数对节点进行命名（因为 ROS 不允许存在相同名称的节点），具体做法如下:</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc,<span class="type">char</span> **argv)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(argc==<span class="number">1</span>) this_node_name=<span class="string">&quot;default&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> this_node_name=argv[<span class="number">1</span>];</span><br><span class="line">    ros::<span class="built_in">init</span>(argc,argv,argv[<span class="number">1</span>]);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>上述代码中，argc 表示外部参数的数量 argv 表示这些参数的值。通过以下这个例子来说明这两个变量怎么决定的：</p>
+<p>假设有个可执行文件的名称为 exe</p>
+<p>执行以下命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./exe</span><br></pre></td></tr></table></figure>
+<p>则其中的参数值为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">argc=<span class="number">1</span></span><br><span class="line">argv[<span class="number">0</span>]= <span class="string">&quot;exe&quot;</span></span><br></pre></td></tr></table></figure>
+<p>若执行的是</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./exe aha</span><br></pre></td></tr></table></figure>
+<p>则其中参数的值为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">argc=<span class="number">2</span></span><br><span class="line">argv[<span class="number">0</span>]=<span class="string">&quot;exe&quot;</span></span><br><span class="line">argv[<span class="number">1</span>]=<span class="string">&quot;aha&quot;</span></span><br></pre></td></tr></table></figure>
+<p>在这个程序中，我们采用这种方式进行外部参数传递。</p>
+<ol>
+<li>与Windows不同， Linux下没有提供现成的键盘敲击检测的函数，因此我们采用 OpenCV 中的 cv::waitKey() 代替，作用是告诉程序我要发送消息了。</li>
+</ol>
+<p>参考代码为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat src=cv::Mat::<span class="built_in">zeros</span>(cv::<span class="built_in">Size</span>(<span class="number">300</span>,<span class="number">100</span>),CV_8UC3);</span><br><span class="line">cv::<span class="built_in">imshow</span>(argv[<span class="number">1</span>],src);</span><br><span class="line"><span class="keyword">if</span>(cv::<span class="built_in">waitKey</span>(<span class="number">1</span>))&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在我自己写的示例程序中，需要在图像上按Enter键，之后就可以在终端中输入想要的信息了。</p>
+<p>程序源代码放在 sample_2 文件夹中，可供参考学习。 <strong>记得在运行时一定要加上外部参数，用于给当前进程节点命名</strong></p>
+<p>运行效果（同时运行4个）：</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/li2_final.png" width="70%">
+</div>
+
+<h3 id="实战3：C-Python-混合编程"><a href="#实战3：C-Python-混合编程" class="headerlink" title="实战3：C++ Python 混合编程"></a>实战3：C++ Python 混合编程</h3><font size=4 color=red>
+
+任务：使用 Python 和 C++ 编程，实现实战1中的功能。
+
+子任务1：使用C++编写发布者节点，Python编写订阅者节点
+
+子任务2：使用Python编写发布者节点，C++编写订阅者节点
+
+</font>
+
+<h4 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h4><h5 id="1-C-和-Python-在-ROS-的结构中有什么不同"><a href="#1-C-和-Python-在-ROS-的结构中有什么不同" class="headerlink" title="1. C++ 和 Python 在 ROS 的结构中有什么不同"></a>1. C++ 和 Python 在 ROS 的结构中有什么不同</h5><p>在 ROS 标准文件结构中， C++ 文件需要放在 src 文件夹下，而 Python 文件需要放在 scripts 文件夹下。(可参考理论部分讲过的 ROS 标准文件结构)</p>
+<h5 id="2-基于-Python-实现的功能包需要怎么进行配置"><a href="#2-基于-Python-实现的功能包需要怎么进行配置" class="headerlink" title="2. 基于 Python 实现的功能包需要怎么进行配置"></a>2. 基于 Python 实现的功能包需要怎么进行配置</h5><p>跟 C++ 不同的是，Python 功能包在建立时完全不需要进行配置，只需要在 .py 文件中使用 import 关键字导入相应的功能包即可。</p>
+<h5 id="3-ROS-中如何执行-Python-程序"><a href="#3-ROS-中如何执行-Python-程序" class="headerlink" title="3. ROS 中如何执行 Python 程序"></a>3. ROS 中如何执行 Python 程序</h5><p>Python 属于脚本语言（解释型语言），本身就可以被执行。因此只需要给一个可执行权限，就可以执行了。但是在 ROS 中，脚本默认是用 shell 解释器执行，因此需要在 Python 代码的第一行指定使用 Python 解释器执行。 </p>
+<p>在第一行添加以下内容，指定 Python 解释器：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br></pre></td></tr></table></figure>
+<p>假设一个功能包的结构如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├── listener_py</span><br><span class="line">│   ├── CMakeLists.txt</span><br><span class="line">│   ├── package.xml</span><br><span class="line">│   ├── scripts</span><br><span class="line">│   │   └── listener.py</span><br><span class="line">│   └── src</span><br></pre></td></tr></table></figure>
+<p>执行其中的 listener.py 的命令是</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当前在工作空间目录下</span></span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">chmod</span> +x src/listener_py/scripts/listener.py <span class="comment">#给权限</span></span><br><span class="line"><span class="built_in">source</span> devel/setup.bash <span class="comment">#注册</span></span><br><span class="line">rosrun listener_py listener.py <span class="comment">#执行</span></span><br></pre></td></tr></table></figure>
+<h5 id="4-Python中的API如何使用"><a href="#4-Python中的API如何使用" class="headerlink" title="4.Python中的API如何使用"></a>4.Python中的API如何使用</h5><p>使用前需要 import rospy。具体的API及使用方法可以参考理论部分中关于 rospy 功能包的讲解，其中很多与 C++ 不同，且普遍比 C++ 来得简洁。</p>
+<p>另外，在这个例子中，还需要注意以下几点：</p>
+<ol>
+<li>Python 的入口函数是需要自己指定的，指定的方式为</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  function() <span class="comment"># 以函数function作为程序入口</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>C++ 中的 ROS_INFO() 在 Python 中变成了 rospy.loginfo(),用法也发生了变化：只能以字符串类型作为参数。如果需要输出数字类型，可以使用 str() 函数将其转化为字符串类型。如：</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rospy.loginfo(<span class="string">&quot;balabala&quot;</span>+<span class="built_in">str</span>(<span class="number">12345</span>)+<span class="string">&quot;balabala&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Python 是弱类型语言，且没有指针的概念（对于程序员是不可见的），因此在设计回调函数时非常简洁。这一点可以在编程中体会。不过也正是因为简洁，导致采用自定义数据类型时，编辑器不会进行补全，因此需要程序员自己将成员变量熟记于心。</li>
+<li>同样由于 Python 是弱类型语言，自定义的数据类型的声明和 C++ 也有所不同。具体如下:</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">msg=MsgType() <span class="comment">#相当于把 msg 变量声明为 MsgType 类型</span></span><br><span class="line">msg.variable1=...</span><br><span class="line">msg.variable2=...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在调用发布和订阅函数时，Python 是直接将消息类型作为函数的参数（参考后面的代码）。这样做的可以带来很多便利，我们会在下一个实战例子中进行讲解</li>
+<li>对于Python，ROS 不提供 ros::spinOnce，只提供 ros::spin。因此在编写发布者线程时，需要为 spin 单独开一个线程, 用于处理可能出现的回调函数。（我也不知道为什么不提供 spinOnce …）</li>
+</ol>
+<p>这里使用 Python 中的 threading 库实现（应该是最简单的实现方法了）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ros_spin</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;start spin thread&quot;</span>)</span><br><span class="line">    rospy.spin()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    add_thread=threading.Thread(target=ros_spin)</span><br><span class="line">    add_thread.start()</span><br></pre></td></tr></table></figure>
+<p>对于不熟悉 Python 的读者来说，可以自行了解一下 Python 的语法。一般来说，只要学懂了 C++，学习 Python 就是“降维打击”，只需一个小时就能精通 Python 。 </p>
+<h4 id="编程实战-2"><a href="#编程实战-2" class="headerlink" title="编程实战"></a>编程实战</h4><p>这里可以直接把实战1中的项目拿过来用，在此基础上进行修改。<br><strong>(为了与实战1区别，这里将话题名改为统一 sample_3)</strong></p>
+<ol>
+<li>在 listener 功能包下创建 scripts 文件夹，并新建 listener.py 文件，添加以下内容：</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> fyt_msg_t.msg <span class="keyword">import</span> DworryMsg</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">callback</span>(<span class="params">msg</span>):</span><br><span class="line">    rospy.loginfo(<span class="string">&quot;I known, you are &quot;</span>+msg.name+<span class="string">&quot; and you are &quot;</span>+<span class="built_in">str</span>(msg.age)+<span class="string">&quot; years old.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">listener</span>():</span><br><span class="line">    rospy.init_node(<span class="string">&quot;listener_node&quot;</span>)</span><br><span class="line"></span><br><span class="line">    sub=rospy.Subscriber(<span class="string">&quot;sample_3&quot;</span>,DworryMsg,callback)</span><br><span class="line">    rospy.spin()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    listener()</span><br></pre></td></tr></table></figure>
+<ol>
+<li>同理在 talker 功能包下创建 scripts 文件夹，并新建 talker.py 文件，添加以下内容：</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> fyt_msg_t.msg <span class="keyword">import</span> DworryMsg</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ros_spin</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;start spin thread&quot;</span>)</span><br><span class="line">    rospy.spin()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">talker</span>():</span><br><span class="line">    rospy.init_node(<span class="string">&quot;talker_node&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 为 spin 创建一个新的线程</span></span><br><span class="line">    add_thread=threading.Thread(target=ros_spin)</span><br><span class="line">    add_thread.start()</span><br><span class="line">    </span><br><span class="line">    pub=rospy.Publisher(<span class="string">&quot;sample_3&quot;</span>,DworryMsg,queue_size=<span class="number">3</span>)</span><br><span class="line">    rate=rospy.Rate(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#指定数据类型</span></span><br><span class="line">    msg=DworryMsg()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> rospy.is_shutdown():</span><br><span class="line">        msg.name=<span class="string">&quot;Dworry&quot;</span></span><br><span class="line">        msg.age=<span class="number">3</span></span><br><span class="line"></span><br><span class="line">        pub.publish(msg)</span><br><span class="line">        rospy.loginfo(<span class="string">&quot;I&#x27;m &quot;</span>+msg.name+<span class="string">&quot; and I&#x27;m &quot;</span>+<span class="built_in">str</span>(msg.age)+<span class="string">&quot; years old.&quot;</span>)</span><br><span class="line">        rate.sleep()</span><br><span class="line">    </span><br><span class="line"><span class="comment">#程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    talker()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol>
+<li>运行</li>
+</ol>
+<p><strong>C++ 发布， Python 订阅</strong></p>
+<p>终端1（发布）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确保自己在最高级工作目录下，之后的终端也是同理</span></span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun talker talker</span><br></pre></td></tr></table></figure>
+<p>终端2（接收）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">sudo <span class="built_in">chmod</span> +x src/listener/scripts/listener.py</span><br><span class="line">rosrun listener listener.py</span><br></pre></td></tr></table></figure>
+<p><strong>C++ 订阅，Python 发布</strong></p>
+<p>终端1（发布）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">sudo <span class="built_in">chmod</span> +x src/talker/scripts/talker.py</span><br><span class="line">rosrun talker talker.py</span><br></pre></td></tr></table></figure>
+<p>终端2（接收）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> devel/setup.bash</span><br><span class="line">rosrun listener listener</span><br></pre></td></tr></table></figure>
+<p>同理也可以进行 Python 发布和 Python 订阅，运行结果跟实战1中的一致。</p>
+<font color=#0f0>通过这个例子，读者可以体会到 C++ 和 Python 混合编程的魅力，本质上还是利用消息机制实现进程间的通讯。在实际的视觉项目中，Python 可以兼容大多数的网络模型，但执行速度慢；C++ 执行速度快，但能够调用的模型少之又少，导致好的模型无法调用而不禁扼腕叹息。采用C++ 和 Python 的混合编程，能够取各自之所长，避各自之所短，使得我们之后的代码既能使用好的模型，也能具备好的性能。这也是使用 ROS 的目的之所在。
+</font>
+
+<p>程序源代码放在 sample3 文件夹中，可供参考学习。</p>
+<h3 id="实战4：基于消息机制的图像传输"><a href="#实战4：基于消息机制的图像传输" class="headerlink" title="实战4：基于消息机制的图像传输"></a>实战4：基于消息机制的图像传输</h3><font size=4 color=red>
+任务：编写两个进程，第一个用于读取一段视频流，并将每一帧图像通过话题进行发送；第二个进程用于接收图像，并将其显示出来。
+
+进一步，读视频、传送图像的进程使用 C++ 编写；接收图像的进程采用 Python 编写。这样更加接近我们实际的使用情况。
+</font>
+
+<h4 id="问题分析-2"><a href="#问题分析-2" class="headerlink" title="问题分析"></a>问题分析</h4><p>图像传输我们在 ROS 理论的功能包讲解中讲到过，需要使用到 sensor_msgs、image_transport、cv_bridge 三个功能包。传递原理如下（回顾一下，也是在 ROS 理论中提到过的）：</p>
+<div align=center>
+<img src="C:/Users/86181/Desktop/vision_tutorial-ros/pic/img_transport.png" width=70%>
+</div>
+
+<p>在实战这里，我们可以这样理解：图像传输是以 cv_bridge 为格式转换工具、以 sensor_msgs::Image 为载体、以 image_transport 为通信信道实现的。同样，我们这里需要解决几个问题：</p>
+<h5 id="1-这几个功能包怎么使用"><a href="#1-这几个功能包怎么使用" class="headerlink" title="1. 这几个功能包怎么使用"></a>1. 这几个功能包怎么使用</h5><p>以下以 C++ 为主进行讲解。Python 中的使用有所不同，但比 C++ 更简单。有些有所出入的地方我也会简单讲解一下。</p>
+<p>cv_bridge 在理论部分有所提及：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cv::Mat src; <span class="comment">//假设此处src非空</span></span><br><span class="line">sensor_msgs::ImagePtr msg;</span><br><span class="line"></span><br><span class="line"><span class="comment">//src -&gt; msg</span></span><br><span class="line">msg=cv_bridge::<span class="built_in">CvImage</span>(std_msgs::<span class="built_in">Header</span>(),<span class="string">&quot;bgr8&quot;</span>,src).<span class="built_in">toImageMsg</span>();</span><br><span class="line"><span class="comment">//msg-&gt;src</span></span><br><span class="line">src=cv_bridge::<span class="built_in">toCvShare</span>(msg,<span class="string">&quot;bgr8&quot;</span>)-&gt;image; </span><br></pre></td></tr></table></figure>
+<p>该功能包在 Python 中的使用有所不同：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入功能包中的子功能包</span></span><br><span class="line"><span class="keyword">from</span> sensor_msgs.msg <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> cv_bridge <span class="keyword">import</span> CvBridge</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">src=cv2.Mat()</span><br><span class="line">msg=Image()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要先声明一个对象，转换时需要调用该对象的成员函数</span></span><br><span class="line">bridge=CvBridge()</span><br><span class="line"></span><br><span class="line"><span class="comment"># msg -&gt; src</span></span><br><span class="line">src=bridge.imgmsg_to_cv2(img_msg=msg,desired_encoding=<span class="string">&quot;bgr8&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># src -&gt; msg</span></span><br><span class="line">msg=bridge.cv2_to_imgmsg(img, <span class="string">&quot;bgr8&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>image_transport 也是：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">imageCallback</span><span class="params">(<span class="type">const</span> sensor_msgs::ImageConstPtr&amp; msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化对象</span></span><br><span class="line"><span class="function">image_transport::ImageTransport <span class="title">it</span><span class="params">(nh)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建订阅者对象</span></span><br><span class="line">image_transport::Subscriber sub = it.<span class="built_in">subscribe</span>(<span class="string">&quot;topic_name&quot;</span>, <span class="number">1</span>, imageCallback);</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建发布者对象</span></span><br><span class="line"><span class="comment">//（消息类型为sensor_msgs::ImagePtr，这里隐形声明了）</span></span><br><span class="line">image_transport::Publisher pub = it.<span class="built_in">advertise</span>(<span class="string">&quot;topic_name&quot;</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>Python 中的使用，比 C++ 方便多了</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> rospy</span><br><span class="line"><span class="keyword">from</span> sensor_msgs.msg <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> cv_bridge <span class="keyword">import</span> CvBridge</span><br><span class="line"></span><br><span class="line"><span class="comment"># &quot;name=&quot; 等是用于指定当前传入的参数对应于函数入口的变量名</span></span><br><span class="line"><span class="comment">## 如果没有指定则默认从前往后依次传递</span></span><br><span class="line"><span class="comment"># 由此可以看到 Python 编程的灵活性还是很高的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 订阅</span></span><br><span class="line">sub = rospy.Subscriber(name=<span class="string">&quot;sample_4&quot;</span>,data_class=Image,queue_size=<span class="number">1</span>,callback=image_callback)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发布</span></span><br><span class="line">pub = rospy.Publisher(<span class="string">&quot;sample_4&quot;</span>, Image, queue_size=<span class="number">1</span>)</span><br><span class="line">msg=Image()</span><br><span class="line">pub.publish(msg)</span><br></pre></td></tr></table></figure>
+<p>sensor_msgs 功能包是用于声明变量的，如</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sensor_msgs::ImagePtr msg;</span><br></pre></td></tr></table></figure>
+<p>在 Python 中，由于没有指针概念，直接使用 Image 即可。</p>
+<h4 id="编程实战-3"><a href="#编程实战-3" class="headerlink" title="编程实战"></a>编程实战</h4><p>相信经过前面几次实战，读者能够熟练掌握建立工作区和创建功能包的技能，因此此处便不再对创建功能包的步骤进行过多讲解。同时，也请读者们自行思考在这个项目中需要使用的功能包有哪些，并自行进行配置和编程。</p>
+<p>程序源代码放在 sample_4 文件夹中，可供参考学习。</p>
+<font color=#0cf>读者可以进一步将发送图像的进程也用 Python 实现。</font>
+
+
+
+<h3 id="实战5：基于消息机制传递-OpenCV-类型的数据"><a href="#实战5：基于消息机制传递-OpenCV-类型的数据" class="headerlink" title="实战5：基于消息机制传递 OpenCV 类型的数据"></a>实战5：基于消息机制传递 OpenCV 类型的数据</h3><font color=red size=4>
+任务：在一个进程中自定义一个旋转矩形 (cv::RotatedRect 类) 和一个圆，并通过消息机制传递给另一个进程，将相应的图形绘制出来。
+
+两个进程均使用 C++ 编写
+</font>
+
+<h4 id="问题分析-3"><a href="#问题分析-3" class="headerlink" title="问题分析"></a>问题分析</h4><p>在 ROS 的标准消息类型中，显然不会包括 OpenCV 类型。所以，我们又一次需要自定义消息类型。</p>
+<p>我在去年下半年培训 C++ 的时候留过这么一道作业题：如何用结构体定义矩形类旋转矩形类。在当时给出的方案是用中心点坐标、长宽和旋转角度来表示一个旋转矩形。因此在这里，我们也可以采用相同的方案。</p>
+<p>同样的，对于圆的类型就更简单了。我们这里采用圆心坐标和半径两个参数来表示一个圆。</p>
+<p>至此，这个程序最关键的部分——消息类型的定义问题得到了解决，之后就是一些 OpenCV 的应用和编程了，对于使用过的读者来说不难。</p>
+<h4 id="编程实战-4"><a href="#编程实战-4" class="headerlink" title="编程实战"></a>编程实战</h4><p>同样地，这里只大致介绍上面提到的消息类型的创建，并简要做一些补充。</p>
+<p>创建 fyt_msg 功能包，在其中创建 msg 文件夹，并创建 CvCircle.msg 文件，编辑以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int32 center_x</span><br><span class="line">int32 center_y</span><br><span class="line">int32 radius</span><br></pre></td></tr></table></figure>
+<p>创建 CvRotatedRect.msg 文件，编辑以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int32 center_x</span><br><span class="line">int32 center_y</span><br><span class="line">int32 width</span><br><span class="line">int32 height</span><br><span class="line">int32 angle</span><br></pre></td></tr></table></figure>
+<p>配置完 CMakeLists.txt 之后编译，即可生成对应的消息类型供 C++ 和 Python 调用。</p>
+<h5 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h5><p>由于 OpenCV 并没有为 Python 提供 RotatedRect 等与图形相关的数据类型。参考 cv2.minAreaRect 函数的返回值（这个函数在 C++ 中返回值是 cv::RotatedRect 类），可以用二维数组表示旋转矩形类。如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义一个矩形</span></span><br><span class="line">rect=[[center_x,center_y],[width,height],angle]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 展开解释：</span></span><br><span class="line">rect[<span class="number">0</span>][<span class="number">0</span>]=center_x <span class="comment">#矩形中心的x坐标</span></span><br><span class="line">rect[<span class="number">0</span>][<span class="number">1</span>]=center_y <span class="comment">#矩形中心的y坐标</span></span><br><span class="line">rect[<span class="number">1</span>][<span class="number">0</span>]=width    <span class="comment">#矩形的宽</span></span><br><span class="line">rect[<span class="number">1</span>][<span class="number">1</span>]=height   <span class="comment">#矩形的高</span></span><br><span class="line">rect[<span class="number">2</span>][<span class="number">0</span>]=angle    <span class="comment">#矩形的旋转角度（0-90取值）</span></span><br></pre></td></tr></table></figure>
+<p>这个在之后的实际项目中会使用到类似的方法，读者可以细品一下这种方式。对于这个项目，采用这种方式没有学习意义，因此两个程序均采用 C++ 进行编写。(另外 OpenCV 中没有定义圆类，因此在 C++ 中仍然需要读者自己定义。)</p>
+<p>另外，对 cv::RotatedRect 类型初始化时，可以采用以下方式</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化旋转矩形，中心点为(250,250),长宽比为50*70，旋转角度为35度</span></span><br><span class="line"><span class="function">cv::RotatedRect <span class="title">rect</span><span class="params">(cv::Point(<span class="number">250</span>,<span class="number">250</span>),cv::Size(<span class="number">50</span>,<span class="number">70</span>),<span class="number">35</span>)</span></span>; </span><br></pre></td></tr></table></figure>
+<p>接下来就可以自行完成这个项目了。</p>
+<p><br/><br>程序源代码放在 sample_5 文件夹中，可供参考学习。</p>
+<h3 id="实战6：基于消息机制传递多组-OpenCV-类型的数据"><a href="#实战6：基于消息机制传递多组-OpenCV-类型的数据" class="headerlink" title="实战6：基于消息机制传递多组 OpenCV 类型的数据"></a>实战6：基于消息机制传递多组 OpenCV 类型的数据</h3><p>“不知不觉间，你已经完成了前面的五项实战任务。现在这个任务是最后一项任务，用于检测你是否真正学会了 ROS 的消息机制。在这个实战任务中，问题分析和编程实战均由你自己独立完成。另外，<strong>这项任务也会直接在未来的视觉项目中得以应用</strong>，务必重视和认真对待。”</p>
+<div align=right>——编者按</div>
+
+<font size=4 color=red>任务：在一个进程中生成多组（不定长）旋转矩形类，通过消息机制发送给另一个进程，并在该进程中绘制出来。</font>
+
+<p>程序源代码放在 sample_6 文件夹中，可供学习参考。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">pengchang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/29/ros/">http://example.com/2022/11/29/ros/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">PC</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/09/18/%E7%AE%97%E6%B3%95/"><img class="next-cover" src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241612817.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">算法</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/2592/202208241424400.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">pengchang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pcpengchang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/pcpengchang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1767191006@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81ROS%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一、ROS介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-ROS-%E8%8A%82%E7%82%B9-Node"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. ROS 节点(Node)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-ROS-%E8%AF%9D%E9%A2%98-Topic"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. ROS 话题(Topic)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-ROS-%E6%B6%88%E6%81%AF-Message"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. ROS 消息(Message)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86%E5%99%A8-Master"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 节点管理器(Master)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ROS%E7%9A%84%E6%A0%87%E5%87%86%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">二、ROS的标准文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-src%EF%BC%9A%E6%BA%90%E7%A9%BA%E9%97%B4"><span class="toc-number">2.1.</span> <span class="toc-text">1.src：源空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-build%EF%BC%9A%E7%BC%96%E8%AF%91%E7%A9%BA%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">2.build：编译空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-devel%EF%BC%9A%E5%BC%80%E5%8F%91%E7%A9%BA%E9%97%B4"><span class="toc-number">2.3.</span> <span class="toc-text">3.devel：开发空间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81ROS%E5%8A%9F%E8%83%BD%E5%8C%85%E3%80%81%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD%E5%8C%85%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">三、ROS功能包、常用功能包介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81roscpp"><span class="toc-number">3.1.</span> <span class="toc-text">1、roscpp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81rospy"><span class="toc-number">3.2.</span> <span class="toc-text">2、rospy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81std-msgs"><span class="toc-number">3.3.</span> <span class="toc-text">3、std_msgs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81message-generation"><span class="toc-number">3.4.</span> <span class="toc-text">4、message_generation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E3%80%81sensor-msgs-%E9%87%8D%E7%82%B9%E6%98%AF%E5%85%B6%E4%B8%AD%E7%9A%84image"><span class="toc-number">3.5.</span> <span class="toc-text">5、sensor_msgs 重点是其中的image</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E3%80%81cv-bridge"><span class="toc-number">3.6.</span> <span class="toc-text">6、cv_bridge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%E3%80%81image-transport"><span class="toc-number">3.7.</span> <span class="toc-text">7、image_transport</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">3.8.</span> <span class="toc-text">8、总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81ROS%E4%B8%AD%E7%9A%84%E6%A0%87%E5%87%86%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">四、ROS中的标准消息类型和自定义消息类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ROS%E6%B6%88%E6%81%AF%E6%89%80%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text">ROS消息所使用的标准数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">自定义消息类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROS-%E5%AE%9E%E6%88%98"><span class="toc-number"></span> <span class="toc-text">ROS 实战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E3%80%81%E5%85%88%E5%AF%BC%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">零、先导知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-ROS-%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">常用的 ROS 命令介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%8C%85%E4%B8%AD%E7%9A%84-CMakeLists-txt-%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.</span> <span class="toc-text">功能包中的 CMakeLists.txt 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E9%80%89%E9%A1%B9-5"><span class="toc-number">1.2.1.</span> <span class="toc-text">*1. 指定编译选项 (5)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AF%BB%E6%89%BE-catkin-%E4%B8%AD%E7%9A%84%E4%BE%9D%E8%B5%96%E5%8C%85-10-15"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 寻找 catkin 中的依赖包 (10-15)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E6%B6%88%E6%81%AF%E6%96%87%E4%BB%B6-50-54"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 添加消息文件(50-54)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E7%94%9F%E6%88%90%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B-71-74"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.生成消息类型 (71-74)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-catkin-%E9%85%8D%E7%BD%AE-105-110"><span class="toc-number">1.2.5.</span> <span class="toc-text">*5.catkin 配置(105-110)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%8C%85%E5%90%AB%E7%9B%AE%E5%BD%95-118-121"><span class="toc-number">1.2.6.</span> <span class="toc-text">*6. 包含目录 (118-121)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E7%94%9F%E6%88%90%E9%93%BE%E6%8E%A5%E5%BA%93-124-126"><span class="toc-number">1.2.7.</span> <span class="toc-text">*7. 生成链接库 (124-126)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-%E7%94%9F%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6-136"><span class="toc-number">1.2.8.</span> <span class="toc-text">8.生成可执行文件(136)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-%E9%87%8D%E5%91%BD%E5%90%8D%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6-142"><span class="toc-number">1.2.9.</span> <span class="toc-text">*9.重命名可执行文件 (142)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E9%93%BE%E6%8E%A5%E5%BA%93-149-151"><span class="toc-number">1.2.10.</span> <span class="toc-text">10.添加可执行文件的链接库 (149-151)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-install-%E5%92%8C-test-154"><span class="toc-number">1.2.11.</span> <span class="toc-text">*11.install 和 test (154- )</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-ROS%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">一. ROS安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-number">2.1.</span> <span class="toc-text">安装时遇到的问题汇总</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAROS%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">二 编写第一个ROS程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 创建一个工作区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAROS%E5%B7%A5%E7%A8%8B%E5%8C%85"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 创建一个ROS工程包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%8F%91%E5%B8%83%E3%80%81%E8%AE%A2%E9%98%85%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.3.</span> <span class="toc-text">2.3.一个简单的发布、订阅程序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%91%E5%B8%83%EF%BC%88Publisher%EF%BC%89%E8%8A%82%E7%82%B9"><span class="toc-number">3.3.1.</span> <span class="toc-text">2.3.1 写一个发布（Publisher）节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-%E5%86%99%E4%B8%80%E4%B8%AA%E8%AE%A2%E9%98%85%EF%BC%88%E7%9B%91%E5%90%AC%EF%BC%89%E8%8A%82%E7%82%B9"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.3.2 写一个订阅（监听）节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-%E7%BC%96%E8%AF%91%E5%88%9B%E5%BB%BA%E7%9A%84%E8%8A%82%E7%82%B9"><span class="toc-number">3.3.3.</span> <span class="toc-text">2.3.3 编译创建的节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.4.</span> <span class="toc-text">执行程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E4%B8%8A%E8%BF%B0%E7%A4%BA%E4%BE%8B%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">三 上述示例程序中的源码解析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-ros-init-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 ros::init() 初始化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-ros-NodeHandle%E7%B1%BB-%EF%BC%88%E7%9B%B4%E8%AF%91%E4%B8%BA%E8%8A%82%E7%82%B9%E5%8F%A5%E6%9F%84%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 ros::NodeHandle类 （直译为节点句柄）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-ros-Publisher-publish-%E5%8F%91%E5%B8%83%E8%80%85%E5%8F%91%E5%B8%83%E6%B6%88%E6%81%AF"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 ros::Publisher::publish() 发布者发布消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-ros-Rate"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 ros::Rate</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-ros-spin-%E5%92%8C-ros-spinOnce"><span class="toc-number">4.5.</span> <span class="toc-text">3.5 ros::spin() 和 ros::spinOnce()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-ROS-INFO"><span class="toc-number">4.6.</span> <span class="toc-text">3.6 ROS_INFO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E6%95%B4%E4%BD%93%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">4.7.</span> <span class="toc-text">3.7 整体运行流程图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%981%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E5%9F%BA%E7%A1%80"><span class="toc-number">5.</span> <span class="toc-text">实战1：自定义消息类型基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81ROS%E6%8F%90%E4%BE%9B%E5%93%AA%E4%BA%9B%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-number">5.1.</span> <span class="toc-text">1.自定义消息类型需要ROS提供哪些功能包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E6%88%91%E4%BB%AC%E5%BA%94%E5%A6%82%E4%BD%95%E5%A3%B0%E6%98%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E6%89%8D%E8%83%BD%E8%AE%A9ROS%E7%B3%BB%E7%BB%9F%E8%AF%86%E5%88%AB%E5%87%BA%E6%9D%A5"><span class="toc-number">5.2.</span> <span class="toc-text">2、我们应如何声明自定义消息类型才能让ROS系统识别出来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%88%91%E4%BB%AC%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%BA%94%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.3.</span> <span class="toc-text">3、我们的程序应如何调用自定义消息类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98"><span class="toc-number">5.4.</span> <span class="toc-text">编程实战</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="toc-number">5.4.1.</span> <span class="toc-text">1.创建工作空间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-number">5.4.2.</span> <span class="toc-text">2. 创建自定义数据类型的功能包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%EF%BC%88%E9%80%89%EF%BC%89%E5%9B%9E%E5%88%B0%E4%B8%BB%E7%9B%AE%E5%BD%95%EF%BC%8C%E7%BC%96%E8%AF%91"><span class="toc-number">5.4.3.</span> <span class="toc-text">3. （选）回到主目录，编译</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%88%9B%E5%BB%BAmsg%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-number">5.4.4.</span> <span class="toc-text">4. 创建msg文件夹和文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E9%85%8D%E7%BD%AECMakeLists-txt%EF%BC%8C%E7%94%9F%E6%88%90%E7%9B%B8%E5%BA%94%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">5.4.5.</span> <span class="toc-text">5. 配置CMakeLists.txt，生成相应头文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%88%9B%E5%BB%BAtalker%E5%92%8Clistener%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="toc-number">5.4.6.</span> <span class="toc-text">6.创建talker和listener功能包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E9%85%8D%E7%BD%AE%E3%80%81%E7%BC%96%E8%AF%91%E3%80%81%E8%BF%90%E8%A1%8C"><span class="toc-number">5.4.7.</span> <span class="toc-text">7. 配置、编译、运行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%982%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AA%97%E5%8F%A3%E9%97%B4%E5%AE%9E%E7%8E%B0%E5%8D%8A%E5%8F%8C%E5%B7%A5%E9%80%9A%E4%BF%A1"><span class="toc-number">6.</span> <span class="toc-text">实战2：两个窗口间实现半双工通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">6.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-1"><span class="toc-number">6.2.</span> <span class="toc-text">编程实战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%983%EF%BC%9AC-Python-%E6%B7%B7%E5%90%88%E7%BC%96%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">实战3：C++ Python 混合编程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-1"><span class="toc-number">7.1.</span> <span class="toc-text">问题分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-C-%E5%92%8C-Python-%E5%9C%A8-ROS-%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%AD%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C"><span class="toc-number">7.1.1.</span> <span class="toc-text">1. C++ 和 Python 在 ROS 的结构中有什么不同</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%9F%BA%E4%BA%8E-Python-%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85%E9%9C%80%E8%A6%81%E6%80%8E%E4%B9%88%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">7.1.2.</span> <span class="toc-text">2. 基于 Python 实现的功能包需要怎么进行配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-ROS-%E4%B8%AD%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C-Python-%E7%A8%8B%E5%BA%8F"><span class="toc-number">7.1.3.</span> <span class="toc-text">3. ROS 中如何执行 Python 程序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-Python%E4%B8%AD%E7%9A%84API%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">7.1.4.</span> <span class="toc-text">4.Python中的API如何使用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-2"><span class="toc-number">7.2.</span> <span class="toc-text">编程实战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%984%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6%E7%9A%84%E5%9B%BE%E5%83%8F%E4%BC%A0%E8%BE%93"><span class="toc-number">8.</span> <span class="toc-text">实战4：基于消息机制的图像传输</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-2"><span class="toc-number">8.1.</span> <span class="toc-text">问题分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%BF%99%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD%E5%8C%85%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8"><span class="toc-number">8.1.1.</span> <span class="toc-text">1. 这几个功能包怎么使用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-3"><span class="toc-number">8.2.</span> <span class="toc-text">编程实战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%985%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6%E4%BC%A0%E9%80%92-OpenCV-%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">9.</span> <span class="toc-text">实战5：基于消息机制传递 OpenCV 类型的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90-3"><span class="toc-number">9.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-4"><span class="toc-number">9.2.</span> <span class="toc-text">编程实战</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%A1%A5%E5%85%85"><span class="toc-number">9.2.1.</span> <span class="toc-text">一些补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%986%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6%E4%BC%A0%E9%80%92%E5%A4%9A%E7%BB%84-OpenCV-%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">10.</span> <span class="toc-text">实战6：基于消息机制传递多组 OpenCV 类型的数据</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By pengchang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
