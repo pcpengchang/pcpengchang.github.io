@@ -1,0 +1,780 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv=Content-Type  content="text/html; charset=gb2312" ><meta name=ProgId  content=Word.Document ><meta name=Generator  content="Microsoft Word 14" ><meta name=Originator  content="Microsoft Word 14" ><title></title><!--[if gte mso 9]><xml><o:DocumentProperties><o:Author>86181</o:Author><o:LastAuthor>86181</o:LastAuthor><o:Revision>1</o:Revision><o:Pages>5</o:Pages><o:Characters>3067</o:Characters><o:Lines>1</o:Lines><o:Paragraphs>1</o:Paragraphs></o:DocumentProperties><o:CustomDocumentProperties><o:KSOProductBuildVer dt:dt="string" >2052-11.1.0.13703</o:KSOProductBuildVer><o:ICV dt:dt="string" >47B28C3C55B34C1CAB32D17B2ECD3305</o:ICV></o:CustomDocumentProperties></xml><![endif]--><!--[if gte mso 9]><xml><o:OfficeDocumentSettings></o:OfficeDocumentSettings></xml><![endif]--><!--[if gte mso 9]><xml><w:WordDocument><w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel><w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery><w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery><w:DocumentKind>DocumentNotSpecified</w:DocumentKind><w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing><w:View>Print</w:View><w:Compatibility><w:DoNotExpandShiftReturn/><w:UseFELayout/></w:Compatibility><w:Zoom>0</w:Zoom></w:WordDocument></xml><![endif]--><!--[if gte mso 9]><xml><w:LatentStyles DefLockedState="false"  DefUnhideWhenUsed="true"  DefSemiHidden="true"  DefQFormat="false"  DefPriority="99"  LatentStyleCount="260" >
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="Normal" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="heading 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 7" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 8" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="heading 9" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 7" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 8" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index 9" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 7" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 8" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toc 9" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Normal Indent" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="footnote text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="annotation text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="header" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="footer" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="index heading" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  QFormat="true"  Name="caption" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="table of figures" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="envelope address" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="envelope return" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="footnote reference" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="annotation reference" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="line number" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="page number" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="endnote reference" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="endnote text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="table of authorities" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="macro" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="toa heading" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Bullet" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Number" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Bullet 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Bullet 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Bullet 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Bullet 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Number 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Number 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Number 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Number 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="Title" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Closing" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Signature" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  UnhideWhenUsed="false"  Name="Default Paragraph Font" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text Indent" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Continue" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Continue 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Continue 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Continue 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="List Continue 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Message Header" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="Subtitle" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Salutation" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Date" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text First Indent" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text First Indent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Note Heading" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text Indent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Body Text Indent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Block Text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Hyperlink" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="FollowedHyperlink" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="Strong" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  QFormat="true"  Name="Emphasis" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Document Map" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Plain Text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="E-mail Signature" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Normal (Web)" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Acronym" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Address" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Cite" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Code" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Definition" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Keyboard" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Preformatted" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Sample" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Typewriter" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="HTML Variable" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  UnhideWhenUsed="false"  Name="Normal Table" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="annotation subject" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="No List" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="1 / a / i" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="1 / 1.1 / 1.1.1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="Article / Section" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Simple 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Simple 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Simple 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Classic 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Classic 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Classic 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Classic 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Colorful 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Colorful 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Colorful 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Columns 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Columns 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Columns 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Columns 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Columns 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 7" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid 8" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 7" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table List 8" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table 3D effects 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table 3D effects 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table 3D effects 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Contemporary" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Elegant" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Professional" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Subtle 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Subtle 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Web 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Web 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Web 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Balloon Text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Grid" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="0"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Table Theme" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="Placeholder Text" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="No Spacing" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="List Paragraph" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="Quote" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="99"  SemiHidden="false"  Name="Intense Quote" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 1" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 2" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 3" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 4" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 5" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="60"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Shading Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="61"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light List Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="62"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Light Grid Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="63"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 1 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="64"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Shading 2 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="65"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 1 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="66"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium List 2 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="67"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 1 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="68"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 2 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="69"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Medium Grid 3 Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="70"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Dark List Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="71"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Shading Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="72"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful List Accent 6" ></w:LsdException>
+<w:LsdException Locked="false"  Priority="73"  SemiHidden="false"  UnhideWhenUsed="false"  Name="Colorful Grid Accent 6" ></w:LsdException>
+</w:LatentStyles></xml><![endif]--><style>
+@font-face{
+font-family:"Times New Roman";
+}
+
+@font-face{
+font-family:"宋体";
+}
+
+@font-face{
+font-family:"Wingdings";
+}
+
+@font-face{
+font-family:"Arial";
+}
+
+@font-face{
+font-family:"黑体";
+}
+
+@list l0:level1{
+mso-level-start-at:2;
+mso-level-number-format:decimal;
+mso-level-suffix:none;
+mso-level-text:"%1）";
+mso-level-tab-stop:none;
+mso-level-number-position:left;
+margin-left:0.0000pt;
+text-indent:0.0000pt;
+font-family:'Times New Roman';}
+
+p.MsoNormal{
+mso-style-name:正文;
+mso-style-parent:"";
+margin-top:0.0000pt;
+margin-right:0.0000pt;
+margin-bottom:0.0000pt;
+margin-left:0.0000pt;
+text-align:left;
+font-family:宋体;
+font-size:12.0000pt;
+}
+
+h1{
+mso-style-name:"标题 1";
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:24.0000pt;
+mso-font-kerning:22.0000pt;
+}
+
+h2{
+mso-style-name:"标题 2";
+mso-style-noshow:yes;
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:18.0000pt;
+}
+
+h3{
+mso-style-name:"标题 3";
+mso-style-noshow:yes;
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:13.5000pt;
+}
+
+h4{
+mso-style-name:"标题 4";
+mso-style-noshow:yes;
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:12.0000pt;
+}
+
+h5{
+mso-style-name:"标题 5";
+mso-style-noshow:yes;
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:10.0000pt;
+}
+
+h6{
+mso-style-name:"标题 6";
+mso-style-noshow:yes;
+mso-style-next:正文;
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-weight:bold;
+font-size:7.5000pt;
+}
+
+span.10{
+font-family:'Times New Roman';
+}
+
+p.pre{
+mso-style-name:"HTML 预设格式";
+margin-top:0.0000pt;
+margin-right:0.0000pt;
+margin-bottom:0.0000pt;
+margin-left:0.0000pt;
+text-align:left;
+font-family:宋体;
+font-size:12.0000pt;
+}
+
+p.p{
+mso-style-name:"普通\(网站\)";
+margin-top:5.0000pt;
+margin-right:0.0000pt;
+margin-bottom:5.0000pt;
+margin-left:0.0000pt;
+mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;
+text-align:left;
+font-family:宋体;
+font-size:12.0000pt;
+}
+
+p.17{
+mso-style-name:char;
+margin-top:0.0000pt;
+margin-right:0.0000pt;
+margin-bottom:0.0000pt;
+margin-left:0.0000pt;
+text-align:left;
+font-family:宋体;
+font-size:12.0000pt;
+}
+
+p.18{
+mso-style-name:z-窗体顶端;
+mso-style-next:正文;
+margin-top:0.0000pt;
+margin-right:0.0000pt;
+margin-bottom:0.0000pt;
+margin-left:0.0000pt;
+border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.7500pt solid windowtext;
+padding:0pt 0pt 1pt 0pt ;
+text-align:center;
+font-family:宋体;
+mso-ascii-font-family:Arial;
+display:none;
+mso-hide:all;
+font-size:8.0000pt;
+}
+
+p.19{
+mso-style-name:z-窗体底端;
+mso-style-next:正文;
+margin-top:0.0000pt;
+margin-right:0.0000pt;
+margin-bottom:0.0000pt;
+margin-left:0.0000pt;
+border-top:1.0000pt solid windowtext;
+mso-border-top-alt:0.7500pt solid windowtext;
+padding:1pt 0pt 0pt 0pt ;
+text-align:center;
+font-family:宋体;
+mso-ascii-font-family:Arial;
+display:none;
+mso-hide:all;
+font-size:8.0000pt;
+}
+
+span.msoIns{
+mso-style-type:export-only;
+mso-style-name:"";
+text-decoration:underline;
+text-underline:single;
+color:blue;
+}
+
+span.msoDel{
+mso-style-type:export-only;
+mso-style-name:"";
+text-decoration:line-through;
+color:red;
+}
+
+table.MsoNormalTable{
+mso-style-name:普通表格;
+mso-style-parent:"";
+mso-style-noshow:yes;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt;
+mso-para-margin:0pt;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-family:'Times New Roman';
+font-size:10.0000pt;
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;
+}
+@page{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}@page Section0{
+size:595.3000pt 841.9500pt;
+mso-header-margin:42.5500pt;
+mso-footer-margin:49.6000pt;
+}
+div.Section0{page:Section0;}</style></head><body style="tab-interval:21pt;" ><!--StartFragment--><div class="Section0" ><p class=18 ><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Arial;
+display:none;mso-hide:all;font-size:8.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >窗体顶端</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Arial;
+display:none;mso-hide:all;font-size:8.0000pt;
+mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><o:p>&nbsp;</o:p></span></p><h4 style="page-break-after:avoid;mso-pagination:widow-orphan;vertical-align:middle;
+line-height:30.0000pt;" ><b><span style="mso-spacerun:'yes';font-family:黑体;mso-hansi-font-family:宋体;
+font-weight:bold;font-size:14.0000pt;mso-font-kerning:0.0000pt;" ><font face="黑体" >一、</font></span></b><b><span style="mso-spacerun:'yes';font-family:黑体;mso-hansi-font-family:宋体;
+font-weight:bold;font-size:14.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;<font face="黑体" >项目基本信息</font> </span></b><b><span style="mso-spacerun:'yes';font-family:宋体;font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></b></h4><table class=MsoNormalTable  border=0  cellspacing=0  style="border-collapse:collapse;width:100.0000%;margin-left:-3.0000pt;
+border:none;mso-padding-alt:0.0000pt 0.0000pt 0.0000pt 0.0000pt ;" ><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项目名称</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  colspan=3  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:1.0000pt solid windowtext;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;基于自然语言处理的临床辅助决策平台</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项目编号</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  colspan=3  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:none;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >202111819261&nbsp;</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项目负责人</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=10.0000%  valign=center  style="width:10.0000%;padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;莫耀盛</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >所在院系</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:1.0000pt solid windowtext;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;计算机科学与技术学院</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >学号</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=10.0000%  valign=center  style="width:10.0000%;padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;201941417129</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >专业</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:none;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;计算机类</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >手机号</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=10.0000%  valign=center  style="width:10.0000%;padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;15627536820</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >邮箱</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:none;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;mys1024@foxmail.com</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr><tr><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >指导老师</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=10.0000%  valign=center  style="width:10.0000%;padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;张剑</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=20.0000%  valign=center  style="width:20.0000%;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:none;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  align=center  style="mso-pagination:widow-orphan;text-align:center;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >所在院系</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td valign=center  style="padding:6.0000pt 6.0000pt 6.0000pt 12.0000pt ;border-left:none;mso-border-left-alt:none;
+border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;border-top:none;
+mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;计算机科学与技术学院</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr></table><h4 style="page-break-after:avoid;mso-pagination:widow-orphan;vertical-align:middle;
+line-height:30.0000pt;" ><b><span style="mso-spacerun:'yes';font-family:黑体;mso-hansi-font-family:宋体;
+font-weight:bold;font-size:14.0000pt;mso-font-kerning:0.0000pt;" ><font face="黑体" >二、</font> <font face="黑体" >结题报告内容</font> </span></b><b><span style="mso-spacerun:'yes';font-family:宋体;font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></b></h4><table class=MsoNormalTable  border=0  cellspacing=0  style="border-collapse:collapse;width:100.2400%;margin-left:-3.0000pt;
+border:none;mso-padding-alt:0.0000pt 0.0000pt 0.0000pt 0.0000pt ;" ><tr><td width=800  valign=center  style="width:480.0000pt;padding:6.0000pt 6.0000pt 6.0000pt 6.0000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:1.0000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:1.0000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:1.0000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:1.0000pt solid windowtext;" ><p class=17  style="margin-top:6.0000pt;margin-right:0.0000pt;margin-bottom:6.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;
+vertical-align:middle;line-height:20.0000pt;" ><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >1</font></span></b><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >）项目实施情况（请就研究目标、研究过程、研究成果、研究心得作全面总结，</font></span></b><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >3000</font></span></b><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >字以内）</font></span></b><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >研究目标：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >本项目利用自然语言处理、深度学习等技术，处理医学文本数据，打造科学的临床辅助决策系统，搭建医疗场景下的服务平台。包含辅助判断、相似病历和医学知识查询等主要功能。通过对电子病历结构化逐层拆解提供医疗辅助决策，并采用多种较优的算法模型分析病情，从而提升医疗质量。医疗服务行业正在走向智能化，从医学数据中提炼出关键内容，对其加工处理，结合自然语言处理和深度学习技术组建一个系统化平台，对推动智慧医疗的发展有着重大意义，同时也是医疗行业新的发展契机。</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >研究过程：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >1.医疗命名实体抽取</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(1)结合成员专业方向，进行模型思路设计和讨论，统筹算法模型编程的实现；</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(2)用各类统计方法分析采样数据，从不同角度对医疗命名实体数据进行挖掘；&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(3)迭代上述两步，针对在不同数据集表现下的评测指标（精确率、召回率以及F1-Measure）进行进一步的模型参数调整，达到模型的最优化，不断提高算法的鲁棒性和泛化性。&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >2.软件架构</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(1)在关键词分析的识别率达到一定的标准后，进行配套的移动端和网页端平台开发，实现简约式用户交互页面效果，识别并抽取事件及属性，进行文本结构化，从而快速定位病发部位等；&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(2)从专业网站上爬取和医学词典获取权威医疗知识，供医务人员和患者参考；</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(3)包含辅助判断、相似病历和医学知识查询等主要功能。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >3.大数据采样和分析</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(1)从大量的历史病例中学习部分治疗思路，辅助医生诊疗；</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(2)BIOES序列标注，BiLSTM-CRF和BiGRU-CRF模型；</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(3)通过神经网络、聚类、分类等不同方法进行数据挖掘，丰富医疗科研数据库。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >研究过程：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >1.用于训练和测试医疗命名实体识别模型的数据集来源于CCKS（全国知识图谱与语义计算大会）2020技术评测中的中文电子病历医疗实体主题评测任务。其中训练集包含1050条已划分出医疗命名实体的中文电子病历数据，这些电子病历当中的医疗命名实体被分为六大类别：疾病和诊断、手术、实验室检验、药物、影像检查、解剖部位。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >2.考虑到医疗命名实体中药物名称、实验室检验项目名称、影像检查项目名称等构成较为复杂，且单独一个字构成命名实体的情况比较少见，故采用BIO标注法标注病历文本数据。由于这些命名实体划分了类别，标签“B”和“I”后还要根据命名实体的类别加上其类别，例如：“糖尿病”属于“疾病和诊断”，为其打上的标签就是“糖（B-DISEASE）尿（I-DISEASE）病（I-DISEASE）”。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >3.由于命名实体识别问题本质上是一个序列标注问题，而序列标注问题本质上又是对每个字符进行分类，所以在命名实体识别问题中，需要提取字向量作为特征向量。本课题使用的预训练模型为BERT-wwm-ext，它是哈工大讯飞联合实验室针对中文任务做出的BERT模型升级版本，与最初的BERT模型相比它在中文任务中能得到更好的结果。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >4.RNN因为有递归的特性而具有序列结构的特点，常被用于序列标注问题，所以本课题选择使用RNN的变体模型LSTM和GRU的改进版本BiLSTM和BiGRU。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >Web前后台：</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >中文电子病历命名实体识别应用，以网页作为前端，界面输入病历文本数据，因命名实体识别模型是通过</font>Python语言训练的，本地不能使用这个命名实体识别模型，因此需要编写服务器端。前端通过Socket网络传输到服务器端，服务器端将接收到的安卓端发送过来的病历文本数据丢到命名实体识别模型进行处理，为其打上标签，打上标签后的文本数据，再经由Socket传输回安卓端，安卓端本地处理传输回来的带标注的文本数据，将识别结果展示给用户。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >中文电子病历命名实体识别安卓应用，能够将输入的中文病历中的医疗命名实体识别出来，按照识别到的实体类别，该应用将这些命名实体在病历文本中用不同的颜色标记出来，并且可以选择只显示其中某个类别的命名实体，还能够统计识别到的各类命名实体的数量，通过列表形式将这些命名实体展示出来，让普通用户也能够快速地读懂病历，识别的结果可以保存到本地，方便下次查阅。</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >识别的主要过程是把安卓端发送过来病历文本传到服务器端处理，把识别结果经过一定的处理流程转化为两个</font>JSON字符串返回到安卓端，这两个JSON字符串分别包含整个文本的识别结果标签序列和识别到的各个类别的命名实体。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >&nbsp;</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >研究心得：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >由于命名实体识别涉及的深度学习算法和统计学算法原理较难理解，模型训练过程中涉及的参数较多，且大多数参数的含义比较难以理解，数据的标注需要一定的专业知识，所以在设计和实现方面还存在许多的不足之处。可继续研究的内容如下：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(1)在数据方面，采用的数据集数据量较为有限，且医疗实体标注较为困难，部分较为少见的命名实体可能没有被涵盖进去，可以对训练数据进行进一步完善，通过数据量更大，标注更精确的数据集，可以训练得到更好的模型。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(2)由于模型训练的时间较长，消耗计算资源较多，采取的几种训练方式使用的参数基本上都设为相同值，可以针对个别模型，调整不同参数，得到更好的识别效果。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(3)在算法选择方面，采取了5种算法，但可用作命名实体识别的算法还有很多，可以尝试使用其他的算法，或者将这些算法混合搭配使用，寻找更加合适于命名实体识别问题的算法。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(4)衍生出的应用功能较为简单，作为单独一个应用可能实用性不大，但可以将该应用的功能结合到更大型的应用中，比如一个医院的病历管理系统中，就能对患者和医生带来便利，随着医疗信息化的普及，在不远的将来都会使用电子病历，如果病历中的命名实体都能标记出来，医生在查看病历时，就能十分快速地看出患者的问题，患者在查看自己的病历又或者是医嘱时，也不会一头雾水了，对医患双方都带来了便利。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" >(5)由于硬件原因，不同的机器配置下同一份数据训练出的效果可能有所差别，可以在另一台机器上训练模型，可能会得到更好的训练效果。</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p>&nbsp;</o:p></span></p><p class=17  style="margin-top:6.0000pt;margin-right:0.0000pt;margin-bottom:6.0000pt;
+mso-pagination:widow-orphan;vertical-align:middle;line-height:20.0000pt;" ><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;</font></span></b><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=17  style="margin-top:6.0000pt;margin-right:0.0000pt;margin-bottom:6.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;
+vertical-align:middle;line-height:20.0000pt;" ><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;</font></span></b><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=17  style="margin-top:6.0000pt;margin-right:0.0000pt;margin-bottom:6.0000pt;
+margin-left:0.0000pt;text-indent:24.0000pt;mso-pagination:widow-orphan;
+vertical-align:middle;line-height:20.0000pt;" ><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;</font></span></b><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=17  style="margin-top:15.1000pt;margin-right:4.0000pt;margin-bottom:27.1000pt;
+margin-left:0.0000pt;text-indent:24.1000pt;mso-char-indent-count:2.0000;
+mso-pagination:widow-orphan;line-height:24.0000pt;mso-list:l0 level1 lfo1;" ><![if !supportLists]><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><span style='mso-list:Ignore;' >2）</span></span><![endif]><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >项目创新点与特色</font></span></b><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></b></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;
+text-align:left;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >顺应市场和</font><font face="宋体" >“互联网+”时代的需求，运用基于自然语言处理的临床辅助决策系统能通过上下文关系智能抽取并分类各种医疗命名实体，比如病灶和影像检查等，实现可定制的病历信息抽取</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >，</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >辅助医疗科研数据库建立。根据病史中提到的症状等推断潜在疾病可能性，同时提供权威候选知识列表，为医务人员和患者提供权威的医学知识，协助医生和患者之间的高效沟通，进而提升医疗质量。同时可结合各类软硬件平台不断丰富国内医疗数据库，推动医疗事业发展。</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=p  style="margin-top:3.0000pt;margin-right:0.0000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;text-indent:21.0000pt;mso-pagination:widow-orphan;
+text-align:left;" ><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >主要通过研究目前最新的中文电子病历命名实体识别实现算法，参考了目前流行的实现方法，基于公开数据集，利用深度学习框架实现了多个医疗命名实体识别模型，并且对这些模型进行了评估分析，完整地实践了一遍自然语言处理命名实体识别任务的流程。</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=17  style="margin-top:15.1000pt;margin-right:4.0000pt;margin-bottom:27.1000pt;
+mso-para-margin-right:0.0000gd;mso-pagination:widow-orphan;text-align:left;
+line-height:24.0000pt;" ><b><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p>&nbsp;</o:p></span></b></p><p class=MsoNormal  style="margin-top:3.0000pt;margin-right:28.1000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;line-height:24.0000pt;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="margin-top:3.0000pt;margin-right:28.1000pt;margin-bottom:3.0000pt;
+margin-left:0.0000pt;mso-pagination:widow-orphan;line-height:24.0000pt;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >&nbsp;</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr></table><h4 style="margin-left:0.0000pt;text-indent:0.0000pt;page-break-after:avoid;
+mso-pagination:widow-orphan;vertical-align:middle;line-height:30.0000pt;" ><b><span style="mso-spacerun:'yes';font-family:宋体;font-weight:bold;
+font-size:14.0000pt;mso-font-kerning:0.0000pt;" ><font face="宋体" >三、</font> </span></b><b><span style="mso-spacerun:'yes';font-family:黑体;mso-hansi-font-family:宋体;
+font-weight:bold;font-size:14.0000pt;mso-font-kerning:0.0000pt;" ><font face="黑体" >项目成果</font></span></b><b><span style="mso-spacerun:'yes';font-family:宋体;font-weight:bold;
+font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></b></h4><table class=MsoNormalTable  border=1  cellspacing=0  style="border-collapse:collapse;width:479.3500pt;margin-left:6.7500pt;
+border:none;mso-border-left-alt:0.5000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;
+mso-border-right-alt:0.5000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;mso-border-insideh:0.7500pt outset windowtext;
+mso-border-insidev:0.7500pt outset windowtext;mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;" ><tr style="height:78.0000pt;" ><td width=798  valign=top  style="width:479.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:0.5000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><b><span style="font-family:黑体;mso-hansi-font-family:宋体;mso-bidi-font-family:'Times New Roman';
+font-weight:bold;font-size:14.0000pt;mso-font-kerning:0.0000pt;" ><font face="黑体" >项目申请书中的预期成果及成果提交形式</font></span></b><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >公开发表论文</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >篇</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >专利</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >调查报告</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >份</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >软件、著作</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >份</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >1</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >实物</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >件</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >竞赛获奖</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >次</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >1</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >其它：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项目结题时取得的成果</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >公开发表论文</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >篇</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >专利</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >调查报告</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >份</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >软件、著作</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >份</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >1</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >实物</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >件</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >竞赛获奖</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >(</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >次</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >)</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >：</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >1</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >其它：</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >项目主要研究成果情况</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p><table class=MsoNormalTable  border=1  cellspacing=0  style="border-collapse:collapse;border:none;mso-border-left-alt:0.5000pt solid windowtext;
+mso-border-top-alt:0.5000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;
+mso-border-insideh:0.7500pt outset windowtext;mso-border-insidev:0.7500pt outset windowtext;mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;" ><tr><td width=156  valign=top  style="width:93.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid windowtext;
+mso-border-left-alt:0.5000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >成果名称</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><br></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >（获奖名称及等级）</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=156  valign=top  style="width:93.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >成果形式</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=156  valign=top  style="width:93.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >作者（获奖者）</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=156  valign=top  style="width:93.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >出版社、发表刊物</font></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><br></span><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >或颁奖单位</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td><td width=156  valign=top  style="width:93.7500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;
+mso-border-left-alt:none;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;
+border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;
+mso-border-bottom-alt:0.5000pt solid windowtext;" ><p class=MsoNormal  style="mso-pagination:widow-orphan;text-align:left;" ><span style="font-family:宋体;mso-bidi-font-family:'Times New Roman';font-size:12.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >时间（刊期）</font></span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></td></tr></table><p class=MsoNormal  align=justify  style="text-align:justify;text-justify:inter-ideograph;" ><span style="font-family:'Times New Roman';mso-fareast-font-family:宋体;font-size:10.0000pt;
+mso-font-kerning:0.0000pt;" ><o:p>&nbsp;</o:p></span></p></td></tr></table><p class=19 ><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Arial;
+display:none;mso-hide:all;font-size:8.0000pt;
+mso-font-kerning:0.0000pt;" ><font face="宋体" >窗体底端</font></span><span style="mso-spacerun:'yes';font-family:宋体;mso-ascii-font-family:Arial;
+display:none;mso-hide:all;font-size:8.0000pt;
+mso-font-kerning:0.0000pt;" ><o:p></o:p></span></p></div><!--EndFragment--></body></html>
